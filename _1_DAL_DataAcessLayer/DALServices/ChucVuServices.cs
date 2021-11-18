@@ -9,5 +9,6 @@ namespace _1_DAL_DataAcessLayer.DALServices
     public class ChucVuServices
     {
         ///AAAAAA
+        /// ádasđsa
     }
 }
