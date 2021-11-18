@@ -1,0 +1,15 @@
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\bin\Debug\net5.0\_2_BUS_BusinessLayer.deps.json
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\bin\Debug\net5.0\_2_BUS_BusinessLayer.dll
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\bin\Debug\net5.0\ref\_2_BUS_BusinessLayer.dll
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\bin\Debug\net5.0\_2_BUS_BusinessLayer.pdb
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\bin\Debug\net5.0\_1_DAL_DataAcessLayer.dll
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\bin\Debug\net5.0\_1_DAL_DataAcessLayer.pdb
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\_2_BUS_BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\_2_BUS_BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\_2_BUS_BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\_2_BUS_BusinessLayer.AssemblyInfo.cs
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\_2_BUS_BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\_2_BUS_BusinessLayer.dll
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\ref\_2_BUS_BusinessLayer.dll
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\_2_BUS_BusinessLayer.pdb
+C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_2_BUS_BusinessLayer\obj\Debug\net5.0\_2_BUS_BusinessLayer.csproj.CopyComplete
