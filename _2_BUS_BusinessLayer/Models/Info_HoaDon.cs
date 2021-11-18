@@ -7,6 +7,7 @@ using _1_DAL_DataAcessLayer.Entities;
 
 namespace _2_BUS_BusinessLayer.Models
 {
+    [Serializable]
     public class Info_HoaDon
     {
         private KhachHang khachHang;

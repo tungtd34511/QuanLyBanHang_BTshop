@@ -98,8 +98,8 @@ namespace _3_GUI_PresentationLayer
             // 
             // Menu_BanHang.Panel1
             // 
-            this.Menu_BanHang.Panel1.AllowDrop = true;
-            this.Menu_BanHang.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Menu_BanHang.Panel1.AutoScroll = true;
+            this.Menu_BanHang.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(180)))), ((int)(((byte)(231)))));
             this.Menu_BanHang.Panel1.Controls.Add(this.btn_ThemHoaDon);
             this.Menu_BanHang.Panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             // 
@@ -109,7 +109,7 @@ namespace _3_GUI_PresentationLayer
             this.Menu_BanHang.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.Menu_BanHang.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Menu_BanHang.Size = new System.Drawing.Size(1506, 938);
-            this.Menu_BanHang.SplitterDistance = 48;
+            this.Menu_BanHang.SplitterDistance = 55;
             this.Menu_BanHang.TabIndex = 0;
             // 
             // btn_ThemHoaDon
@@ -123,7 +123,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_ThemHoaDon.Location = new System.Drawing.Point(0, 0);
             this.btn_ThemHoaDon.Name = "btn_ThemHoaDon";
             this.btn_ThemHoaDon.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.btn_ThemHoaDon.Size = new System.Drawing.Size(52, 48);
+            this.btn_ThemHoaDon.Size = new System.Drawing.Size(52, 55);
             this.btn_ThemHoaDon.TabIndex = 14;
             this.btn_ThemHoaDon.UseVisualStyleBackColor = true;
             this.btn_ThemHoaDon.Click += new System.EventHandler(this.btn_ThemHoaDon_Click);
@@ -146,7 +146,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
             this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer2.Size = new System.Drawing.Size(1506, 886);
+            this.splitContainer2.Size = new System.Drawing.Size(1506, 879);
             this.splitContainer2.SplitterDistance = 406;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -158,7 +158,7 @@ namespace _3_GUI_PresentationLayer
             this.group.Location = new System.Drawing.Point(0, 0);
             this.group.Name = "group";
             this.group.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.group.Size = new System.Drawing.Size(406, 886);
+            this.group.Size = new System.Drawing.Size(406, 879);
             this.group.TabIndex = 0;
             this.group.TabStop = false;
             this.group.Text = "Hóa Đơn";
@@ -169,7 +169,7 @@ namespace _3_GUI_PresentationLayer
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 860);
+            this.panel1.Size = new System.Drawing.Size(400, 853);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer4
@@ -202,8 +202,8 @@ namespace _3_GUI_PresentationLayer
             // 
             this.splitContainer4.Panel2.Controls.Add(this.btn_ThanhToan);
             this.splitContainer4.Panel2.Controls.Add(this.button1);
-            this.splitContainer4.Size = new System.Drawing.Size(400, 860);
-            this.splitContainer4.SplitterDistance = 636;
+            this.splitContainer4.Size = new System.Drawing.Size(400, 853);
+            this.splitContainer4.SplitterDistance = 630;
             this.splitContainer4.TabIndex = 0;
             // 
             // txt_Tienthua
@@ -387,19 +387,20 @@ namespace _3_GUI_PresentationLayer
             this.splitContainer3.Panel2.Controls.Add(this.menuStrip1);
             this.splitContainer3.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.splitContainer3.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer3.Size = new System.Drawing.Size(1096, 886);
-            this.splitContainer3.SplitterDistance = 364;
+            this.splitContainer3.Size = new System.Drawing.Size(1096, 879);
+            this.splitContainer3.SplitterDistance = 359;
             this.splitContainer3.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgrid_thongtin);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(1096, 364);
+            this.groupBox1.Size = new System.Drawing.Size(1096, 359);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
@@ -420,11 +421,11 @@ namespace _3_GUI_PresentationLayer
             this.Column4,
             this.Column5});
             this.dgrid_thongtin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgrid_thongtin.Location = new System.Drawing.Point(3, 35);
+            this.dgrid_thongtin.Location = new System.Drawing.Point(3, 36);
             this.dgrid_thongtin.Name = "dgrid_thongtin";
             this.dgrid_thongtin.RowHeadersWidth = 51;
             this.dgrid_thongtin.RowTemplate.Height = 29;
-            this.dgrid_thongtin.Size = new System.Drawing.Size(1090, 326);
+            this.dgrid_thongtin.Size = new System.Drawing.Size(1090, 320);
             this.dgrid_thongtin.TabIndex = 0;
             this.dgrid_thongtin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_thongtin_CellDoubleClick);
             this.dgrid_thongtin.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_thongtin_CellEndEdit);
@@ -435,7 +436,7 @@ namespace _3_GUI_PresentationLayer
             this.Column1.HeaderText = "STT";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 62;
+            this.Column1.Width = 67;
             // 
             // Column2
             // 
@@ -443,7 +444,7 @@ namespace _3_GUI_PresentationLayer
             this.Column2.HeaderText = "Mã hàng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 96;
+            this.Column2.Width = 101;
             // 
             // colum3
             // 
@@ -451,28 +452,28 @@ namespace _3_GUI_PresentationLayer
             this.colum3.HeaderText = "Tên mặt hàng";
             this.colum3.MinimumWidth = 6;
             this.colum3.Name = "colum3";
-            this.colum3.Width = 128;
+            this.colum3.Width = 137;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Đơn Giá";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 92;
+            this.Column3.Width = 96;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Số Lượng";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 101;
+            this.Column4.Width = 109;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Thành Tiền";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 110;
+            this.Column5.Width = 119;
             // 
             // label8
             // 
@@ -524,7 +525,7 @@ namespace _3_GUI_PresentationLayer
             this.panel.RowCount = 2;
             this.panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panel.Size = new System.Drawing.Size(1096, 487);
+            this.panel.Size = new System.Drawing.Size(1096, 485);
             this.panel.TabIndex = 1;
             // 
             // menuStrip1
