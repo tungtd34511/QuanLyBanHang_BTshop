@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "278IMpxcEkIPW7Hgka954g4oBaG2Kd56M/WEKWxK6D5N8bxh+GjHpOdoYe2wrJDz5rCxTzQUTyaFHgRje8K5zQ==",
+  "dgSpecHash": "ceLCYDhXajDJW7t3+I8URrRYHEILz92Lg3Br7uIoI592IRszrR6Y8/PcGkTRupEs2N6zpn5Al0XGAkXskl1gQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_1_DAL_DataAcessLayer\\_1_DAL_DataAcessLayer.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_1_DAL_DataAcessLayer\\_1_DAL_DataAcessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

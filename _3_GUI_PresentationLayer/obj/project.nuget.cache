@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "znkuunLjz0lw5l97sw9M70qF9GrG7sEAGt/N2f7+wsoSOTHnYM138a5d2TRW9+tAkDuNZNIvsMqTkhVoIR50dA==",
+  "dgSpecHash": "tMXC72H5HTNzR3wZxU4fd1j9deou+zdpYvOUlT1QDi1ixsOUsLf18NKgvGOTg4nz6WAHBww1y/6kyaVH1lDw6Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_3_GUI_PresentationLayer\\_3_GUI_PresentationLayer.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_3_GUI_PresentationLayer\\_3_GUI_PresentationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",

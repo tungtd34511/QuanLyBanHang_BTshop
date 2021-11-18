@@ -5935,11 +5935,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_3_GUI_PresentationLayer\\_3_GUI_PresentationLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_3_GUI_PresentationLayer\\_3_GUI_PresentationLayer.csproj",
       "projectName": "_3_GUI_PresentationLayer",
-      "projectPath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_3_GUI_PresentationLayer\\_3_GUI_PresentationLayer.csproj",
+      "projectPath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_3_GUI_PresentationLayer\\_3_GUI_PresentationLayer.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_3_GUI_PresentationLayer\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_3_GUI_PresentationLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5960,11 +5960,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_1_DAL_DataAcessLayer\\_1_DAL_DataAcessLayer.csproj": {
-              "projectPath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_1_DAL_DataAcessLayer\\_1_DAL_DataAcessLayer.csproj"
+            "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_1_DAL_DataAcessLayer\\_1_DAL_DataAcessLayer.csproj": {
+              "projectPath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_1_DAL_DataAcessLayer\\_1_DAL_DataAcessLayer.csproj"
             },
-            "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_2_BUS_BusinessLayer\\_2_BUS_BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop2\\_2_BUS_BusinessLayer\\_2_BUS_BusinessLayer.csproj"
+            "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_2_BUS_BusinessLayer\\_2_BUS_BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\Admin\\OneDrive - Hanoi University of Science and Technology\\Desktop\\QuanLyBanHang_BTshop\\_2_BUS_BusinessLayer\\_2_BUS_BusinessLayer.csproj"
             }
           }
         }
