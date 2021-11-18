@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAcessLayer.DALServices
 {
-    class ChucVuServices
+    public class ChucVuServices
     {
+        
     }
 }
