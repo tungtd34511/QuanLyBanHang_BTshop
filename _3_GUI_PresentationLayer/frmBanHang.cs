@@ -50,8 +50,9 @@ namespace _3_GUI_PresentationLayer
         private int _stt;
         private int _index;
         private int _indexHoadon;
-        private void LoadDS(List<NuocHoa> _list)
+        private void LoadDS(List<SanPham> _list)
         {
+            var t = _list[0].MoTaSanPham.Id;
             for (int i = 0; i < _list.Count; i++)
             {
                 try
@@ -59,13 +60,13 @@ namespace _3_GUI_PresentationLayer
                     Color myColor = Color.FromArgb(150, Color.Black);
                     string istr = i.ToString();
                     Label _lbl_1 = new Label();
-                    _lbl_1.Text = String.Format("{0:#,##0.##}", _list[i].DonnGiaBan) + " vnđ";
+                    _lbl_1.Text = String.Format("{0:#,##0.##}", _list[i].BangGia.GiaBan.ToString()) + " vnđ";
                     _lbl_1.Name = "lbl" + istr;
                     _lbl_1.Dock = DockStyle.Bottom;
                     _lbl_1.BackColor = myColor;
                     _lbl_1.ForeColor = Color.White;
                     Label lb2 = new Label();
-                    lb2.Text = _list[i].NhaSx + " " + _list[i].TenHang + " " + _list[i].PhienBan + " " + _list[i].DungTich.ToString() + " ml";
+                    //lb2.Text = _list[i].XuatXu.ThuongHieu + " " + _list[i].Ten + " " + _list[i].MoTaSanPham.PhienBan + " " + _list[i].MoTaSanPham.DungTich.ToString() + " ml";
                     lb2.Dock = DockStyle.Bottom;
                     Panel panel1 = new Panel();
                     panel1.Controls.Add(_lbl_1);
@@ -74,11 +75,11 @@ namespace _3_GUI_PresentationLayer
                     panel1.Size = panel.Size;
                     panel1.Visible = true;
                     panel1.BackColor = Color.White;
-                    panel1.BackgroundImage = Image.FromFile(_list[i].Anh);
+                    //panel1.BackgroundImage = Image.FromFile(_list[i].MoTaSanPham.Anh);
                     panel1.BackgroundImageLayout = ImageLayout.Zoom;
                     panel1.Click += (o, s) =>
                     {
-                        ADDGridThongtin(_list[Convert.ToInt32(panel1.Name.ToString().Substring(panel1.Name.Length - 1, 1))].MaHang);
+                        ADDGridThongtin(_list[Convert.ToInt32(panel1.Name.ToString().Substring(panel1.Name.Length - 1, 1))].Id.ToString());
                     };
                     panel.Controls.Add(panel1);
                 }
@@ -90,11 +91,19 @@ namespace _3_GUI_PresentationLayer
 
         private void ADDGridThongtin(string input)
         {
+            string tenchitiet;
             _stt = dgrid_thongtin.RowCount + 1;
-            var x = _iQlNuocHoaServices.getlstNuocHoas().FirstOrDefault(c => c.MaQr == input || c.MaHang == input);
-            x.Soluong = 1;
-            string tenchitiet = x.NhaSx + " " + x.TenHang + " " + x.PhienBan + " " + x.DungTich.ToString() + " ml";
-            dgrid_thongtin.Rows.Add(_stt, x.MaHang, tenchitiet, x.DonGiaNhap, x.Soluong, x.Soluong * x.DonGiaNhap);
+            var x = _iBanHangServices.GetlstSanPhams().FirstOrDefault(c => c.MaQR == input || c.Id == Convert.ToInt32(input));
+            x.SoLuong = 1;
+            try
+            {
+                 tenchitiet = x.XuatXu.ThuongHieu + " " + x.Ten + " " + x.MoTaSanPham.PhienBan + " " + x.MoTaSanPham.DungTich.ToString() + " ml";
+            }
+            catch (Exception e)
+            {
+                 tenchitiet = "";
+            }
+            dgrid_thongtin.Rows.Add(_stt, x.Id, tenchitiet, x.BangGia.GiaBan, x.SoLuong, x.SoLuong * x.BangGia.GiaBan);
             int thanhtien = 0;
             for (int j = 0; j < dgrid_thongtin.RowCount; j++)
             {
@@ -111,7 +120,7 @@ namespace _3_GUI_PresentationLayer
         #endregion
         private void frmBanHang_Load(object sender, EventArgs e)
         {
-            LoadDS(_iQlNuocHoaServices.getlstNuocHoas());
+            LoadDS(_iBanHangServices.GetlstSanPhams());
         }
 
         private void btn_QuetQR_Click(object sender, EventArgs e)
