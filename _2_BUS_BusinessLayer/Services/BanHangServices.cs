@@ -5,7 +5,9 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using _1_DAL_DataAcessLayer.DALServices;
 using _1_DAL_DataAcessLayer.Entities;
+using _1_DAL_DataAcessLayer.IDALServices;
 using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Models;
 
@@ -14,16 +16,23 @@ namespace _2_BUS_BusinessLayer.Services
     public class BanHangServices : IBanHangServices
     {
         //Field
+        private ISanPhamServices _iSanPhamServices;
         private List<Info_HoaDon> _lstInfoHoaDons;
+        private List<InfoSanPham> _lstInfoSanPhams;
         private List<SanPham> _lstSanPhams;
+        private List<MoTaSanPham> _lstMoTaSanPhams;
+        private List<XuatXu> _lstXuatXus;
+        private List<BangGia> _lstBangGias;
         private KhachHang _khachHang;
         private BinaryFormatter _bf;
         private FileStream _fs;
         private string _path = @"C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop\_3_GUI_PresentationLayer\DataTamThoi\Hoadon.bin";
         public BanHangServices()
         {
+            _iSanPhamServices = new SanPhamServices();
             _lstInfoHoaDons = new List<Info_HoaDon>();
             _lstSanPhams = new List<SanPham>();
+            _lstSanPhams = _iSanPhamServices.GetlstSanPhams();
             Openfile();
         }
         //Method
