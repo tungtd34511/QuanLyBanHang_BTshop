@@ -22,28 +22,27 @@ namespace _3_GUI_PresentationLayer
         public frmThongTinKhachHang(KhachHang khachHang)
         {
             InitializeComponent();
-            //LoadDS
             LoadThongTin(khachHang);
         }
         //Method
         private void LoadThongTin(KhachHang khachHang)
         {
-            //if (khachHang != null)
-            //{
-            //    txtMaKhachHang.Text = khachHang.MaKhachHang;
-            //    txtTenKhachHang.Text = khachHang.TenKhachHang;
-            //    txt_SDT.Text = khachHang.Sdt;
-            //    txt_email.Text = khachHang.Email;
-            //    if (khachHang.TinhTrang == true)
-            //    {
-            //        rbtn_HoatDong.Checked = true;
-            //    }
-            //    else
-            //    {
-            //        rbtn_KhongHoatDong.Checked = true;
-            //    }
-            //    txt_Diachi.Text = khachHang.DiaChi;
-            //}
+            if (khachHang != null)
+            {
+                txtMaKhachHang.Text = khachHang.Id.ToString();
+                txtTenKhachHang.Text = khachHang.Ten;
+                txt_SDT.Text = khachHang.SDT;
+                txt_email.Text = khachHang.Email;
+                if (khachHang.TinhTrang == true)
+                {
+                    rbtn_HoatDong.Checked = true;
+                }
+                else
+                {
+                    rbtn_KhongHoatDong.Checked = true;
+                }
+                txt_Diachi.Text = khachHang.DiaChi;
+            }
         }
 
         public Control getbtn_Luu()
@@ -51,24 +50,24 @@ namespace _3_GUI_PresentationLayer
             return btn_Luu;
         }
 
-        //public KhachHang GetKhachHang()
-        //{
-        //    _khachHang = new KhachHang();
-        //    _khachHang.MaKhachHang = txtMaKhachHang.Text;
-        //    _khachHang.TenKhachHang = txtTenKhachHang.Text;
-        //    _khachHang.Sdt = txt_SDT.Text;
-        //    _khachHang.Email = txt_email.Text;
-        //    if (rbtn_HoatDong.Checked)
-        //    {
-        //        _khachHang.TinhTrang = true;
-        //    }
-        //    else
-        //    {
-        //        _khachHang.TinhTrang = false;
-        //    }
+        public KhachHang GetKhachHang()
+        {
+            _khachHang = new KhachHang();
+            _khachHang.Id = Convert.ToInt32(txtMaKhachHang.Text);
+            _khachHang.Ten = txtTenKhachHang.Text;
+            _khachHang.SDT = txt_SDT.Text;
+            _khachHang.Email = txt_email.Text;
+            if (rbtn_HoatDong.Checked)
+            {
+                _khachHang.TinhTrang = true;
+            }
+            else
+            {
+                _khachHang.TinhTrang = false;
+            }
 
-        //    _khachHang.DiaChi = txt_Diachi.Text;
-        //    return _khachHang;
-        //}
+            _khachHang.DiaChi = txt_Diachi.Text;
+            return _khachHang;
+        }
     }
 }

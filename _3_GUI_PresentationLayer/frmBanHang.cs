@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
-//using _1_DAL_DataAcessLayer.Entities;
+using _1_DAL_DataAcessLayer.Entities;
 using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Models;
 using _2_BUS_BusinessLayer.Services;
@@ -26,14 +26,14 @@ namespace _3_GUI_PresentationLayer
         private IHoaDonChiTietServices _iHoaDonChiTietServices;
         private IBanHangServices _iBanHangServices;
         private Info_HoaDon _infoHoaDon;
-        //private KhachHang _khachHang;
+        private KhachHang _khachHang;
         public frmBanHang()
         {
             InitializeComponent();
             _iHoaDonChiTietServices = new HoaDonChiTietServices();
             _iQlNuocHoaServices = new QLNuocHoaServices();
             _iBanHangServices = new BanHangServices();
-            //_khachHang = new KhachHang();
+            _khachHang = new KhachHang();
             _stt = 1;
             _index = 0;
             _indexHoadon = 0;
@@ -127,8 +127,9 @@ namespace _3_GUI_PresentationLayer
             frmThongTinKhachHang frmThongTinKhach = new frmThongTinKhachHang();
             frmThongTinKhach.getbtn_Luu().Click += (o, args) =>
             {
-                //_khachHang = frmThongTinKhach.GetKhachHang();
+                _khachHang = frmThongTinKhach.GetKhachHang();
                 frmThongTinKhach.Close();
+                txt_TenKhachHang.Text = _khachHang.Ten;
                 btn_ThemKhachHang.Visible = false;
             };
             frmThongTinKhach.ShowDialog();
@@ -173,8 +174,8 @@ namespace _3_GUI_PresentationLayer
             {
                 GiamGia = 0,
                 GiaTriDonHang = int.Parse(txt_TienHang.Text),
-                //KhachHang = _khachHang,
-                //LstDonHangs = new List<DonHang>(),
+                KhachHang = _khachHang,
+                LstDonHangs = new List<DonHang>(),
                 MaHoaDon = "HD0001",
                 MaNhanVien = "NV001",
                 Ngayban = DateTime.Today,
@@ -239,6 +240,11 @@ namespace _3_GUI_PresentationLayer
             });
             Menu_BanHang.Panel1.Controls.Add(title_HoaDon);
             btn_ThemHoaDon.Visible = true;
+        }
+
+        private void LoadinfoHoaDon(List<Info_HoaDon> _lstDons)
+        {
+
         }
     }
 }

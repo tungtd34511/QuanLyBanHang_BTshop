@@ -11,5 +11,10 @@ namespace _2_BUS_BusinessLayer.Services
     public class QLKhachHang
     {
         private List<InfoKhachHang> _lstInfoKhachHangs;
+
+        public QLKhachHang()
+        {
+        }
+
     }
 }
