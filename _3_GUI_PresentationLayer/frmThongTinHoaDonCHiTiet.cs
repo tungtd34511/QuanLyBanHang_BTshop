@@ -16,7 +16,7 @@ namespace _3_GUI_PresentationLayer
     public partial class frmThongTinHoaDonCHiTiet : Form
     {
         //Fields
-        private IQLNuocHoaServices _iQlNuocHoaServices;
+        private IQLSanPhamServices _iQlNuocHoaServices;
         private IHoaDonChiTietServices _iHoaDonChiTietServices;
         private HoaDonChiTiet _hoaDonChiTiet;
         public frmThongTinHoaDonCHiTiet()
@@ -26,7 +26,7 @@ namespace _3_GUI_PresentationLayer
         public frmThongTinHoaDonCHiTiet(HoaDonChiTiet hoaDonChiTiet)
         {
             InitializeComponent();
-            _iQlNuocHoaServices = new QLNuocHoaServices();
+            _iQlNuocHoaServices = new QLSanPhamServices();
             //_iDonHangServices = new DonHangServices();
             //_iQlKhachHangServices = new QLKhachHangServices();
             _iHoaDonChiTietServices = new HoaDonChiTietServices();

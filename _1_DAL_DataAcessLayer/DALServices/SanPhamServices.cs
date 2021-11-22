@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using _1_DAL_DataAcessLayer.DatabaseContext;
 using _1_DAL_DataAcessLayer.Entities;
 using _1_DAL_DataAcessLayer.IDALServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL_DataAcessLayer.DALServices
 {
@@ -27,6 +28,7 @@ namespace _1_DAL_DataAcessLayer.DALServices
         public void GetlstSanPhamsFromDB()
         {
             _lstSanPhams = _dbContext.SANPHAM.ToList();
+            int i = _lstSanPhams[0].MoTaSanPham.Id;
         }
 
         public string AddSanPham(SanPham sanPham)

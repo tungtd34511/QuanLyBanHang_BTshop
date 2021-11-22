@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace _1_DAL_DataAcessLayer.Entities
 {
     [Table("MOTASANPHAM")]
+    [Serializable]
     public class MoTaSanPham
     {
         [Key]
@@ -16,7 +17,7 @@ namespace _1_DAL_DataAcessLayer.Entities
         public int DungTich { get; set; }
         [StringLength(25)]
         public string PhienBan { get; set; }
-        [StringLength(100)]
+        [StringLength(300)]
         public string Anh { get; set; }
         [StringLength(100)]
         public string GhiChu { get; set; }

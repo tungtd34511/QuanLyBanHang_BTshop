@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 namespace _1_DAL_DataAcessLayer.Entities
 {
     [Table("DONHANG")]
+    [Serializable]
     public class DonHang
     {
         [Key]
         public int Id { get; set; }
         [ForeignKey("MaHoaDon")]
-        public HoaDon HoaDon { get; set; }
+        public virtual HoaDon HoaDon { get; set; }
         [ForeignKey("MaSanPham")]
-        public SanPham SanPham { get; set; }
+        public virtual SanPham SanPham { get; set; }
         public int SoLuong { get; set; }
         public bool TinhTrang { get; set; }
     }

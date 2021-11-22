@@ -16,9 +16,9 @@ namespace _1_DAL_DataAcessLayer.Entities
         [StringLength(35)]
         public string Ten { get; set; } 
         [ForeignKey("MaChucVu")]
-        public ChucVu ChucVu { get; set; }
+        public virtual ChucVu ChucVu { get; set; }
         public bool TinhTrang { get; set; }
         [ForeignKey("MaMoTa")]
-        public ThongTinCaNhan ThongTinCaNhan { get; set; }
+        public virtual ThongTinCaNhan ThongTinCaNhan { get; set; }
     }
 }

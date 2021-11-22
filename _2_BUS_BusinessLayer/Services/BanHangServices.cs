@@ -33,7 +33,7 @@ namespace _2_BUS_BusinessLayer.Services
             _lstInfoHoaDons = new List<Info_HoaDon>();
             _lstSanPhams = new List<SanPham>();
             _lstSanPhams = _iSanPhamServices.GetlstSanPhams();
-            Openfile();
+
         }
         //Method
         public List<Info_HoaDon> GetlstInfoHoaDon()
@@ -47,31 +47,19 @@ namespace _2_BUS_BusinessLayer.Services
 
         public void Openfile()
         {
-            try
-            {
                 _fs = new FileStream(_path, FileMode.Open);
                 _bf = new BinaryFormatter();//Khởi tạo
                 var data = _bf.Deserialize(_fs);
                 _lstInfoHoaDons = new List<Info_HoaDon>();
                 _lstInfoHoaDons = (List<Info_HoaDon>)data;
                 _fs.Close();
-            }
-            catch (Exception e)
-            {
-            }
         }
         public void Savefile()
         {
-            try
-            {
                 _fs = new FileStream(_path, FileMode.Create);
                 _bf = new BinaryFormatter();//Khởi tạo
                 _bf.Serialize(_fs,_lstInfoHoaDons);
                 _fs.Close();
-            }
-            catch (Exception e)
-            {
-            }
         }
 
         public void Add(Info_HoaDon infoHoaDon)

@@ -203,7 +203,7 @@ namespace _3_GUI_PresentationLayer
             this.splitContainer4.Panel2.Controls.Add(this.btn_ThanhToan);
             this.splitContainer4.Panel2.Controls.Add(this.button1);
             this.splitContainer4.Size = new System.Drawing.Size(400, 853);
-            this.splitContainer4.SplitterDistance = 630;
+            this.splitContainer4.SplitterDistance = 606;
             this.splitContainer4.TabIndex = 0;
             // 
             // txt_Tienthua
@@ -409,10 +409,10 @@ namespace _3_GUI_PresentationLayer
             // 
             this.dgrid_thongtin.AllowUserToAddRows = false;
             this.dgrid_thongtin.AllowUserToDeleteRows = false;
-            this.dgrid_thongtin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgrid_thongtin.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgrid_thongtin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgrid_thongtin.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dgrid_thongtin.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgrid_thongtin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_thongtin.ColumnHeadersHeight = 45;
             this.dgrid_thongtin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -423,12 +423,14 @@ namespace _3_GUI_PresentationLayer
             this.dgrid_thongtin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid_thongtin.Location = new System.Drawing.Point(3, 36);
             this.dgrid_thongtin.Name = "dgrid_thongtin";
-            this.dgrid_thongtin.RowHeadersWidth = 51;
+            this.dgrid_thongtin.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgrid_thongtin.RowTemplate.Height = 29;
             this.dgrid_thongtin.Size = new System.Drawing.Size(1090, 320);
             this.dgrid_thongtin.TabIndex = 0;
+            this.dgrid_thongtin.DataMemberChanged += new System.EventHandler(this.dgrid_thongtin_DataMemberChanged);
             this.dgrid_thongtin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_thongtin_CellDoubleClick);
             this.dgrid_thongtin.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_thongtin_CellEndEdit);
+            this.dgrid_thongtin.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgrid_thongtin_RowsAdded);
             // 
             // Column1
             // 
@@ -444,7 +446,7 @@ namespace _3_GUI_PresentationLayer
             this.Column2.HeaderText = "Mã hàng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 101;
+            this.Column2.Width = 93;
             // 
             // colum3
             // 
@@ -452,28 +454,28 @@ namespace _3_GUI_PresentationLayer
             this.colum3.HeaderText = "Tên mặt hàng";
             this.colum3.MinimumWidth = 6;
             this.colum3.Name = "colum3";
-            this.colum3.Width = 137;
+            this.colum3.Width = 126;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Đơn Giá";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 96;
+            this.Column3.Width = 89;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Số Lượng";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 109;
+            this.Column4.Width = 101;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Thành Tiền";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 119;
+            this.Column5.Width = 110;
             // 
             // label8
             // 
@@ -489,7 +491,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_QuetQR
             // 
-            this.btn_QuetQR.Location = new System.Drawing.Point(616, 2);
+            this.btn_QuetQR.Location = new System.Drawing.Point(502, 1);
             this.btn_QuetQR.Name = "btn_QuetQR";
             this.btn_QuetQR.Size = new System.Drawing.Size(106, 25);
             this.btn_QuetQR.TabIndex = 3;
@@ -499,7 +501,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(742, 2);
+            this.button3.Location = new System.Drawing.Point(644, 1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(106, 25);
             this.button3.TabIndex = 2;
@@ -536,6 +538,7 @@ namespace _3_GUI_PresentationLayer
             this.txt_timKiem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.Size = new System.Drawing.Size(1096, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -557,6 +560,7 @@ namespace _3_GUI_PresentationLayer
             this.Name = "frmBanHang";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "frmBanHang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBanHang_FormClosing);
             this.Load += new System.EventHandler(this.frmBanHang_Load);
             this.Menu_BanHang.Panel1.ResumeLayout(false);
             this.Menu_BanHang.Panel2.ResumeLayout(false);
@@ -612,17 +616,17 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colum3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btn_ThemKhachHang;
         private System.Windows.Forms.TextBox txt_TenKhachHang;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label txt_Tienthua;
         private FontAwesome.Sharp.IconButton btn_ThemHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colum3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

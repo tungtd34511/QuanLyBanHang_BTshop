@@ -12,6 +12,7 @@ namespace _1_DAL_DataAcessLayer.DatabaseContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseLazyLoadingProxies();
             if (!optionsBuilder.IsConfigured)
             {
                 //Khi cấu hình đường dẫn nếu chưa có DB thì có thể đặt tên DB ở đây

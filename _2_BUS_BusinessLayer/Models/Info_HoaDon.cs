@@ -11,20 +11,21 @@ namespace _2_BUS_BusinessLayer.Models
     public class Info_HoaDon
     {
         private KhachHang khachHang;
-        private List<DonHang> listDonHang;
-        private int index;
+        private List<int> _lstSanPhams;
+        private List<int> soLuongSP;
         private int tienKhachTra;
-
+        private int index;
         public Info_HoaDon()
         {
         }
 
-        public Info_HoaDon(KhachHang khachHang, List<DonHang> listDonHang, int index, int tienKhachTra)
+        public Info_HoaDon(KhachHang khachHang, List<int> listSanPhams,List<int> soluongSP, int index, int tienKhachTra)
         {
             this.khachHang = khachHang;
-            this.listDonHang = listDonHang;
-            this.index = index;
+            this._lstSanPhams = listSanPhams;
+            this.soLuongSP = soluongSP;
             this.tienKhachTra = tienKhachTra;
+            this.index = index;
         }
 
         public KhachHang KhachHang
@@ -32,23 +33,27 @@ namespace _2_BUS_BusinessLayer.Models
             get => khachHang;
             set => khachHang = value;
         }
-
-        public List<DonHang> ListDonHang
+        public int TienKhachTra
         {
-            get => listDonHang;
-            set => listDonHang = value;
+            get => tienKhachTra;
+            set => tienKhachTra = value;
         }
-
         public int Index
         {
             get => index;
             set => index = value;
         }
 
-        public int TienKhachTra
+        public List<int> LstSanPhams
         {
-            get => tienKhachTra;
-            set => tienKhachTra = value;
+            get => _lstSanPhams;
+            set => _lstSanPhams = value;
+        }
+
+        public List<int> SoLuongSp
+        {
+            get => soLuongSP;
+            set => soLuongSP = value;
         }
     }
 }

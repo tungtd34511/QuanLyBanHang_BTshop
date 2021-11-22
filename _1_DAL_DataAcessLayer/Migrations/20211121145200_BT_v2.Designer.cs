@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL_DataAcessLayer.DatabaseContext;
 
 namespace _1_DAL_DataAcessLayer.Migrations
 {
     [DbContext(typeof(DBContext_BTShop))]
-    partial class DBContext_BTShopModelSnapshot : ModelSnapshot
+    [Migration("20211121145200_BT_v2")]
+    partial class BT_v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

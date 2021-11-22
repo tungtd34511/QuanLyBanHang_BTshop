@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace _1_DAL_DataAcessLayer.Entities
 {
     [Table("SANPHAM")]
+    [Serializable]
     public class SanPham
     {
         [Key]
@@ -20,10 +21,10 @@ namespace _1_DAL_DataAcessLayer.Entities
         [StringLength(25)]
         public string MaQR { get; set; }
         [ForeignKey("MaBangGia")]
-        public BangGia BangGia { get; set; }
+        public virtual BangGia BangGia { get; set; }
         [ForeignKey("MaXuatXu")]
-        public XuatXu XuatXu { get; set; }
+        public virtual XuatXu XuatXu { get; set; }
         [ForeignKey("MaMoTa")]
-        public MoTaSanPham MoTaSanPham { get; set; }
+        public virtual MoTaSanPham MoTaSanPham { get; set; }
     }
 }
