@@ -74,8 +74,8 @@ namespace _3_GUI_PresentationLayer
             this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.lb_NgayGio);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(1615, 855);
-            this.splitContainer1.SplitterDistance = 734;
+            this.splitContainer1.Size = new System.Drawing.Size(1307, 555);
+            this.splitContainer1.SplitterDistance = 476;
             this.splitContainer1.TabIndex = 0;
             // 
             // txt_TimKiem
@@ -97,7 +97,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_Them
             // 
-            this.btn_Them.Location = new System.Drawing.Point(34, 126);
+            this.btn_Them.Location = new System.Drawing.Point(34, 110);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(94, 29);
             this.btn_Them.TabIndex = 1;
@@ -111,13 +111,14 @@ namespace _3_GUI_PresentationLayer
             this.dgrid_DSsanPham.AllowUserToDeleteRows = false;
             this.dgrid_DSsanPham.BackgroundColor = System.Drawing.Color.White;
             this.dgrid_DSsanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_DSsanPham.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgrid_DSsanPham.GridColor = System.Drawing.Color.White;
-            this.dgrid_DSsanPham.Location = new System.Drawing.Point(3, 191);
+            this.dgrid_DSsanPham.Location = new System.Drawing.Point(0, 139);
             this.dgrid_DSsanPham.Name = "dgrid_DSsanPham";
             this.dgrid_DSsanPham.ReadOnly = true;
             this.dgrid_DSsanPham.RowHeadersWidth = 51;
             this.dgrid_DSsanPham.RowTemplate.Height = 29;
-            this.dgrid_DSsanPham.Size = new System.Drawing.Size(1579, 385);
+            this.dgrid_DSsanPham.Size = new System.Drawing.Size(1286, 385);
             this.dgrid_DSsanPham.TabIndex = 0;
             this.dgrid_DSsanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_DSsanPham_CellClick);
             // 
@@ -143,7 +144,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1615, 855);
+            this.ClientSize = new System.Drawing.Size(1307, 555);
             this.Controls.Add(this.splitContainer1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "frmDanhMucSanPham";

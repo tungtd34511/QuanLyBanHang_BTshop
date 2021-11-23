@@ -38,7 +38,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateAccount(Account account)
         {
-            _dbContext.Update(account);
+            var entry = _dbContext.TAIKHOAN.First(e => e.Id == account.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(account);
             _dbContext.SaveChanges();
             GetlstAccountsFromDB();
             return "Sửa thành công";

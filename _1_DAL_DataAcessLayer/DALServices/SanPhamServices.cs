@@ -28,7 +28,6 @@ namespace _1_DAL_DataAcessLayer.DALServices
         public void GetlstSanPhamsFromDB()
         {
             _lstSanPhams = _dbContext.SANPHAM.ToList();
-            int i = _lstSanPhams[0].MoTaSanPham.Id;
         }
 
         public string AddSanPham(SanPham sanPham)
@@ -40,7 +39,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateSanPham(SanPham sanPham)
         {
-            _dbContext.Update(sanPham);
+            var entry = _dbContext.SANPHAM.First(e => e.Id == sanPham.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(sanPham);
             _dbContext.SaveChanges();
             GetlstSanPhamsFromDB();
             return "Sửa thành công";

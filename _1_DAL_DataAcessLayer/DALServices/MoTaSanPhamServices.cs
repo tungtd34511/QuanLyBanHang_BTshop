@@ -26,7 +26,6 @@ namespace _1_DAL_DataAcessLayer.DALServices
     {
         return _lstMoTaSanPhams;
     }
-
     public void GetlstMoTaSanPhamsFromDB()
     {
         _lstMoTaSanPhams = _dbContext.MOTASANPHAM.ToList();
@@ -42,8 +41,10 @@ namespace _1_DAL_DataAcessLayer.DALServices
 
     public string UpdateMoTaSanPham(MoTaSanPham moTaSanPham)
     {
-        _dbContext.Update(moTaSanPham);
+        var entry = _dbContext.MOTASANPHAM.First(e => e.Id == moTaSanPham.Id);
+        _dbContext.Entry(entry).CurrentValues.SetValues(moTaSanPham);
         _dbContext.SaveChanges();
+            _dbContext.SaveChanges();
         GetlstMoTaSanPhamsFromDB();
         return "Sửa thành công";
     }

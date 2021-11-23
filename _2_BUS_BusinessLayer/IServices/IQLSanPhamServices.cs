@@ -11,5 +11,8 @@ namespace _2_BUS_BusinessLayer.IServices
     public interface IQLSanPhamServices
     {
         List<SanPham> GetlstSanPhams();
+        void Update(SanPham sanPham);
+        void Add(SanPham sanPham);
+        void Delete(SanPham sanPham);
     }
 }

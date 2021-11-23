@@ -23,7 +23,7 @@ namespace _3_GUI_PresentationLayer
     {
         //Fields
         private IQLSanPhamServices _iQlNuocHoaServices;
-        private IHoaDonChiTietServices _iHoaDonChiTietServices;
+        private IQLHoaDonServices _iHoaDonChiTietServices;
         private IQLSanPhamServices _iQlSanPhamServices;
         private IBanHangServices _iBanHangServices;
         private List<int> _lstDonHangs;
@@ -35,7 +35,7 @@ namespace _3_GUI_PresentationLayer
         public frmBanHang()
         {
             InitializeComponent();
-            _iHoaDonChiTietServices = new HoaDonChiTietServices();
+            _iHoaDonChiTietServices = new QLHoaDonServices();
             _iQlNuocHoaServices = new QLSanPhamServices();
             _iBanHangServices = new BanHangServices();
             _iQlSanPhamServices = new QLSanPhamServices();
@@ -186,19 +186,26 @@ namespace _3_GUI_PresentationLayer
 
         private void ADDGridThongtin(string input,int soLuong)
         {
-            string tenchitiet;
-            _stt = dgrid_thongtin.RowCount + 1;
-            var x = _iBanHangServices.GetlstSanPhams().FirstOrDefault(c => c.MaQR == input || c.Id == Convert.ToInt32(input));
-            x.SoLuong = soLuong;
-            try
+            if (input != null&&soLuong!=null)
             {
-                 tenchitiet = x.XuatXu.ThuongHieu + " " + x.Ten + " " + x.MoTaSanPham.PhienBan + " " + x.MoTaSanPham.DungTich.ToString() + " ml";
+                string tenchitiet;
+                _stt = dgrid_thongtin.RowCount + 1;
+                var x = _iBanHangServices.GetlstSanPhams()
+                    .FirstOrDefault(c => c.MaQR == input || c.Id == Convert.ToInt32(input));
+                x.SoLuong = soLuong;
+                try
+                {
+                    tenchitiet = x.XuatXu.ThuongHieu + " " + x.Ten + " " + x.MoTaSanPham.PhienBan + " " +
+                                 x.MoTaSanPham.DungTich.ToString() + " ml";
+                }
+                catch (Exception e)
+                {
+                    tenchitiet = "";
+                }
+
+                dgrid_thongtin.Rows.Add(_stt, x.Id, tenchitiet, x.BangGia.GiaBan, x.SoLuong,
+                    x.SoLuong * x.BangGia.GiaBan);
             }
-            catch (Exception e)
-            {
-                 tenchitiet = "";
-            }
-            dgrid_thongtin.Rows.Add(_stt, x.Id, tenchitiet, x.BangGia.GiaBan, x.SoLuong, x.SoLuong * x.BangGia.GiaBan);
         }
         private void loadQR(string data)
         {
@@ -267,18 +274,18 @@ namespace _3_GUI_PresentationLayer
         }
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
-            _iHoaDonChiTietServices.ADDHoaDonChiTiet(new HoaDonChiTiet()
-            {
-                GiamGia = 0,
-                GiaTriDonHang = int.Parse(txt_TienHang.Text),
-                KhachHang = _khachHang,
-                LstDonHangs = new List<DonHang>(),
-                MaHoaDon = "HD0001",
-                MaNhanVien = "NV001",
-                Ngayban = DateTime.Today,
-                TenNhanVien = "Tạ DUy Tùng",
-                TinhTrang = true
-            });
+            //_iHoaDonChiTietServices.ADDHoaDonChiTiet(new HoaDonChiTiet()
+            //{
+            //    GiamGia = 0,
+            //    GiaTriDonHang = int.Parse(txt_TienHang.Text),
+            //    KhachHang = _khachHang,
+            //    LstDonHangs = new List<DonHang>(),
+            //    MaHoaDon = "HD0001",
+            //    MaNhanVien = "NV001",
+            //    Ngayban = DateTime.Today,
+            //    TenNhanVien = "Tạ DUy Tùng",
+            //    TinhTrang = true
+            //});
         }
         private void btn_ThemHoaDon_Click(object sender, EventArgs e)
         {

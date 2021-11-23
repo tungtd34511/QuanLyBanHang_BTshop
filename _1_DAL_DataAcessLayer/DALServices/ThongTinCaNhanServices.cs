@@ -38,7 +38,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateThongTinCaNhan(ThongTinCaNhan thongTinCaNhan)
         {
-            _dbContext.Update(thongTinCaNhan);
+            var entry = _dbContext.THONGTINCANHAN.First(e => e.Id == thongTinCaNhan.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(thongTinCaNhan);
             _dbContext.SaveChanges();
             GetlstThongTinCaNhansFromDB();
             return "Sửa thành công";

@@ -38,7 +38,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateChucVu(ChucVu chucVu)
         {
-            _dbContext.Update(chucVu);
+            var entry = _dbContext.CHUCVU.First(e => e.Id == chucVu.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(chucVu);
             _dbContext.SaveChanges();
             GetlstChucVusFromDB();
             return "Sửa thành công";

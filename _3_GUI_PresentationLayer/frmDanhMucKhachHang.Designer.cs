@@ -69,7 +69,6 @@ namespace _3_GUI_PresentationLayer
             this.dgrid_khachHang.Size = new System.Drawing.Size(1141, 445);
             this.dgrid_khachHang.TabIndex = 2;
             this.dgrid_khachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_khachHang_CellClick);
-            this.dgrid_khachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_khachHang_CellContentClick);
             // 
             // panel3
             // 
@@ -79,7 +78,6 @@ namespace _3_GUI_PresentationLayer
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1141, 55);
             this.panel3.TabIndex = 1;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label1
             // 
@@ -89,7 +87,6 @@ namespace _3_GUI_PresentationLayer
             this.label1.Size = new System.Drawing.Size(296, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nháy vào ô để xem và sửa thông tin chi tiết";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -101,7 +98,6 @@ namespace _3_GUI_PresentationLayer
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1141, 125);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btn_them
             // 
@@ -144,7 +140,6 @@ namespace _3_GUI_PresentationLayer
             this.txt_timKiem.Name = "txt_timKiem";
             this.txt_timKiem.Size = new System.Drawing.Size(273, 27);
             this.txt_timKiem.TabIndex = 0;
-            this.txt_timKiem.TextChanged += new System.EventHandler(this.txt_timKiem_TextChanged);
             // 
             // frmDanhMucKhachHang
             // 
@@ -154,7 +149,6 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.panel1);
             this.Name = "frmDanhMucKhachHang";
             this.Text = "frmDanhMucKhachHang";
-            this.Load += new System.EventHandler(this.frmDanhMucKhachHang_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_khachHang)).EndInit();
             this.panel3.ResumeLayout(false);
