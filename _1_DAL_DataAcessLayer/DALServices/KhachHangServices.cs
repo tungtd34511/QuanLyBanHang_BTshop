@@ -31,7 +31,6 @@ namespace _1_DAL_DataAcessLayer.DALServices
 
         public string AddKhachHang(KhachHang khachHang)
         {
-            khachHang.Id = new int();
             _dbContext.Add(khachHang);
             _dbContext.SaveChanges();
             GetlstKhachHangsFromDB();
