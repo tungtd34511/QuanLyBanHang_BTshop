@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\_1_DAL_DataAcessLayer",
+    "\\_2_BUS_BusinessLayer",
+    "\\_2_BUS_BusinessLayer\\IServices",
+    "\\_2_BUS_BusinessLayer\\Services",
+    "\\_3_GUI_PresentationLayer"
+  ],
+  "SelectedNode": "\\_2_BUS_BusinessLayer\\IServices\\IQLNhanVienServices.cs",
+  "PreviewInSolutionExplorer": false
+}

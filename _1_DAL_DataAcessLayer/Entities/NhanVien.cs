@@ -20,5 +20,12 @@ namespace _1_DAL_DataAcessLayer.Entities
         public bool TinhTrang { get; set; }
         [ForeignKey("MaMoTa")]
         public virtual ThongTinCaNhan ThongTinCaNhan { get; set; }
+        public object Sdt { get; set; }
+        public object Email { get; set; }
+        public object NgaySinh { get; set; }
+        public bool GioiTinh { get; set; }
+        public object GhiChu { get; set; }
+        public object MaAnh { get; set; }
+        public object DiaChi { get; set; }
     }
 }

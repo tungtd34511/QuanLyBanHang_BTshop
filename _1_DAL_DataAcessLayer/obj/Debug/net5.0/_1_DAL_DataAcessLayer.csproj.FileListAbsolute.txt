@@ -13,3 +13,11 @@ C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\Qua
 C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_1_DAL_DataAcessLayer\bin\Debug\net5.0\_1_DAL_DataAcessLayer.runtimeconfig.json
 C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_1_DAL_DataAcessLayer\bin\Debug\net5.0\_1_DAL_DataAcessLayer.runtimeconfig.dev.json
 C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop2\_1_DAL_DataAcessLayer\obj\Debug\net5.0\_1_DAL_DataAcessLayer.genruntimeconfig.cache
+C:\Users\DELL\Desktop\DA1\QLBH\QuanLyBanHang_BTshop-main\QuanLyBanHang_BTshop\_1_DAL_DataAcessLayer\obj\Debug\net5.0\_1_DAL_DataAcessLayer.csprojAssemblyReference.cache
+C:\Users\DELL\Desktop\DA1\QLBH\QuanLyBanHang_BTshop-main\QuanLyBanHang_BTshop\_1_DAL_DataAcessLayer\obj\Debug\net5.0\_1_DAL_DataAcessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Desktop\DA1\QLBH\QuanLyBanHang_BTshop-main\QuanLyBanHang_BTshop\_1_DAL_DataAcessLayer\obj\Debug\net5.0\_1_DAL_DataAcessLayer.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\DA1\QLBH\QuanLyBanHang_BTshop-main\QuanLyBanHang_BTshop\_1_DAL_DataAcessLayer\obj\Debug\net5.0\_1_DAL_DataAcessLayer.AssemblyInfo.cs
+C:\Users\DELL\Desktop\DA1\QLBH\QuanLyBanHang_BTshop-main\QuanLyBanHang_BTshop\_1_DAL_DataAcessLayer\obj\Debug\net5.0\_1_DAL_DataAcessLayer.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\DA1\QLBH\QuanLyBanHang_BTshop-main\QuanLyBanHang_BTshop\_1_DAL_DataAcessLayer\obj\Debug\net5.0\_1_DAL_DataAcessLayer.dll
+C:\Users\DELL\Desktop\DA1\QLBH\QuanLyBanHang_BTshop-main\QuanLyBanHang_BTshop\_1_DAL_DataAcessLayer\obj\Debug\net5.0\ref\_1_DAL_DataAcessLayer.dll
+C:\Users\DELL\Desktop\DA1\QLBH\QuanLyBanHang_BTshop-main\QuanLyBanHang_BTshop\_1_DAL_DataAcessLayer\obj\Debug\net5.0\_1_DAL_DataAcessLayer.pdb
