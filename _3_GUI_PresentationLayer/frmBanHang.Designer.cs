@@ -209,7 +209,7 @@ namespace _3_GUI_PresentationLayer
             // txt_Tienthua
             // 
             this.txt_Tienthua.AutoSize = true;
-            this.txt_Tienthua.Location = new System.Drawing.Point(194, 552);
+            this.txt_Tienthua.Location = new System.Drawing.Point(194, 504);
             this.txt_Tienthua.Name = "txt_Tienthua";
             this.txt_Tienthua.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Tienthua.Size = new System.Drawing.Size(17, 20);
@@ -294,7 +294,7 @@ namespace _3_GUI_PresentationLayer
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 549);
+            this.label5.Location = new System.Drawing.Point(16, 504);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(138, 20);

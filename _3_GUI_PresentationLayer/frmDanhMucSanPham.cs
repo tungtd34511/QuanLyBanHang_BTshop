@@ -60,6 +60,7 @@ namespace _3_GUI_PresentationLayer
             dgrid_DSsanPham.Columns[13].Name = "Mã QR";
             dgrid_DSsanPham.Columns[14].Name = "Ghi chú";
             dgrid_DSsanPham.Columns[15].Name = "Ảnh";
+            dgrid_DSsanPham.Rows.Clear();
             int stt = 1;
             foreach (var x in _list)
             {
@@ -82,8 +83,7 @@ namespace _3_GUI_PresentationLayer
             _iqlSanPhamServices = new QLSanPhamServices();
             chkInfo = new ChkInfo();
             SetInterval(1000, NgayGio);
-            _lstSanPhams = new List<SanPham>();
-            this.LoadDS(_iqlSanPhamServices.GetlstSanPhams());
+            LoadDS(_iqlSanPhamServices.GetlstSanPhams());
         }
 
         private void dgrid_DSsanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -100,7 +100,17 @@ namespace _3_GUI_PresentationLayer
                 {
                     this._sanPham = new SanPham();
                     _sanPham = frmThongTinSanPham.getNuocHoa();
-                    //_iqlSanPhamServices.editNuocHoa(_nuocHoa, listindex);
+                    int a, b, c, d;
+                    a = _lstSanPhams[listindex].Id;
+                    b = _lstSanPhams[listindex].MoTaSanPham.Id;
+                    c = _lstSanPhams[listindex].XuatXu.Id;
+                    d = _lstSanPhams[listindex].BangGia.Id;
+                    _lstSanPhams[listindex] = _sanPham;
+                    _lstSanPhams[listindex].Id = a;
+                    _lstSanPhams[listindex].MoTaSanPham.Id = b;
+                    _lstSanPhams[listindex].XuatXu.Id=c;
+                    _lstSanPhams[listindex].BangGia.Id=d;
+                    _iqlSanPhamServices.Update(_lstSanPhams[listindex]);
                     frmThongTinSanPham.Close();
                     this.LoadDS(_iqlSanPhamServices.GetlstSanPhams());
                 };
@@ -118,13 +128,18 @@ namespace _3_GUI_PresentationLayer
         }
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            _sanPham = new SanPham();
+            _sanPham = new SanPham()
+            {
+                BangGia = new BangGia(),
+                XuatXu = new XuatXu(),
+                MoTaSanPham = new MoTaSanPham()
+            };
             frmThongTinSanPham frmThongTinSanPham = new frmThongTinSanPham(_sanPham);
             frmThongTinSanPham.GetControl().Click += (s, e) =>
             {
                 this._sanPham = new SanPham();
                 _sanPham = frmThongTinSanPham.getNuocHoa();
-                //_iqlSanPhamServices.addNuocHoa(_nuocHoa);
+                _iqlSanPhamServices.Add(_sanPham);
                 frmThongTinSanPham.Close();
                 this.LoadDS(_iqlSanPhamServices.GetlstSanPhams());
             };

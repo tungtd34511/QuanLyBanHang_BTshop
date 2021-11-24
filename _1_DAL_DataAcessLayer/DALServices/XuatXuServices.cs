@@ -38,7 +38,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateXuatXu(XuatXu xuatXu)
         {
-            _dbContext.Update(xuatXu);
+            var entry = _dbContext.XUATXU.First(e => e.Id == xuatXu.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(xuatXu);
             _dbContext.SaveChanges();
             GetlstXuatXusFromDB();
             return "Sửa thành công";

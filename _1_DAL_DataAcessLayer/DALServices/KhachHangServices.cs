@@ -31,6 +31,7 @@ namespace _1_DAL_DataAcessLayer.DALServices
 
         public string AddKhachHang(KhachHang khachHang)
         {
+            khachHang.Id = new int();
             _dbContext.Add(khachHang);
             _dbContext.SaveChanges();
             GetlstKhachHangsFromDB();
@@ -38,7 +39,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateKhachHang(KhachHang khachHang)
         {
-            _dbContext.Update(khachHang);
+            var entry = _dbContext.KHACHHANG.First(e => e.Id == khachHang.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(khachHang);
             _dbContext.SaveChanges();
             GetlstKhachHangsFromDB();
             return "Sửa thành công";

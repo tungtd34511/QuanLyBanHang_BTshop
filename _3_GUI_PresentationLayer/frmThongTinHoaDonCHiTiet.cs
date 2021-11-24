@@ -17,7 +17,7 @@ namespace _3_GUI_PresentationLayer
     {
         //Fields
         private IQLSanPhamServices _iQlNuocHoaServices;
-        private IHoaDonChiTietServices _iHoaDonChiTietServices;
+        private IQLHoaDonServices _iHoaDonChiTietServices;
         private HoaDonChiTiet _hoaDonChiTiet;
         public frmThongTinHoaDonCHiTiet()
         {
@@ -29,7 +29,7 @@ namespace _3_GUI_PresentationLayer
             _iQlNuocHoaServices = new QLSanPhamServices();
             //_iDonHangServices = new DonHangServices();
             //_iQlKhachHangServices = new QLKhachHangServices();
-            _iHoaDonChiTietServices = new HoaDonChiTietServices();
+            _iHoaDonChiTietServices = new QLHoaDonServices();
             LoadDanhSachSP(hoaDonChiTiet);
             LoadThongTin(hoaDonChiTiet);
         }
@@ -109,14 +109,14 @@ namespace _3_GUI_PresentationLayer
         {
             _hoaDonChiTiet = new HoaDonChiTiet();
             _hoaDonChiTiet = _iHoaDonChiTietServices.GetlstHoaDonChiTiets()
-                .FirstOrDefault(c => c.MaHoaDon == txt_maHoaDon.Text);
+                .FirstOrDefault(c => c.HoaDon.Id ==Convert.ToInt32(txt_maHoaDon.Text));
             if (rbtn_hoatDong.Checked)
             {
-                _hoaDonChiTiet.TinhTrang = true;
+                _hoaDonChiTiet.HoaDon.TinhTrang = true;
             }
             else
             {
-                _hoaDonChiTiet.TinhTrang = false;
+                _hoaDonChiTiet.HoaDon.TinhTrang = false;
             }
 
             return _hoaDonChiTiet;

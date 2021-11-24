@@ -38,7 +38,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateDonHang(DonHang donHang)
         {
-            _dbContext.Update(donHang);
+            var entry = _dbContext.DONHANG.First(e => e.Id == donHang.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(donHang);
             _dbContext.SaveChanges();
             GetlstDonHangsFromDB();
             return "Sửa thành công";

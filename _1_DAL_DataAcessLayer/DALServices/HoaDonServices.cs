@@ -38,7 +38,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateHoaDon(HoaDon hoaDon)
         {
-            _dbContext.Update(hoaDon);
+            var entry = _dbContext.HOADON.First(e => e.Id == hoaDon.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(hoaDon);
             _dbContext.SaveChanges();
             GetlstHoaDonsFromDB();
             return "Sửa thành công";

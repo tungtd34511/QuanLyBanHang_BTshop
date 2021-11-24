@@ -18,11 +18,7 @@ namespace _2_BUS_BusinessLayer.Services
         //Field
         private ISanPhamServices _iSanPhamServices;
         private List<Info_HoaDon> _lstInfoHoaDons;
-        private List<InfoSanPham> _lstInfoSanPhams;
         private List<SanPham> _lstSanPhams;
-        private List<MoTaSanPham> _lstMoTaSanPhams;
-        private List<XuatXu> _lstXuatXus;
-        private List<BangGia> _lstBangGias;
         private KhachHang _khachHang;
         private BinaryFormatter _bf;
         private FileStream _fs;

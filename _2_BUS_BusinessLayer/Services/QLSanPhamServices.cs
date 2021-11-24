@@ -33,5 +33,25 @@ namespace _2_BUS_BusinessLayer.Services
             _lstSanPhams = _iSanPhamServices.GetlstSanPhams();
             return _lstSanPhams;
         }
+
+        public void Update(SanPham sanPham)
+        {
+            _iBangGiaServices.UpdateBangGia(sanPham.BangGia);
+            _iMoTaSanPhamServices.UpdateMoTaSanPham(sanPham.MoTaSanPham);
+            _iXuatXuServices.UpdateXuatXu(sanPham.XuatXu);
+            _iSanPhamServices.UpdateSanPham(sanPham);
+            GetlstSanPhams();
+        }
+
+        public void Add(SanPham sanPham)
+        {
+            _iSanPhamServices.AddSanPham(sanPham);
+            GetlstSanPhams();
+        }
+        public void Delete(SanPham sanPham)
+        {
+            _iSanPhamServices.DeleteSanPham(sanPham.Id);
+            GetlstSanPhams();
+        }
     }
 }

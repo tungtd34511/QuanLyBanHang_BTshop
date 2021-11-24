@@ -7,11 +7,11 @@ using _2_BUS_BusinessLayer.Models;
 
 namespace _2_BUS_BusinessLayer.IServices
 {
-    public interface IHoaDonChiTietServices
+    public interface IQLHoaDonServices
     {
         List<HoaDonChiTiet> GetlstHoaDonChiTiets();
-        HoaDonChiTiet FindHoaDonChiTiet(string input);
-        void ADDHoaDonChiTiet(HoaDonChiTiet hoaDonChiTiet);
-        void EditHoaDonChitiet(HoaDonChiTiet hoaDonChiTiet, int index);
+        void Add(HoaDonChiTiet hoaDonChiTiet);
+        void Update(HoaDonChiTiet hoaDonChiTiet);
+        void Delete(HoaDonChiTiet hoaDonChiTiet);
     }
 }

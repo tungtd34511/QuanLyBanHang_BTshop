@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using _1_DAL_DataAcessLayer.DatabaseContext;
 using _1_DAL_DataAcessLayer.Entities;
 using _1_DAL_DataAcessLayer.IDALServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL_DataAcessLayer.DALServices
 {
@@ -38,7 +39,8 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public string UpdateBangGia(BangGia bangGia)
         {
-            _dbContext.Update(bangGia);
+            var entry = _dbContext.BANGGIA.First(e => e.Id == bangGia.Id);
+            _dbContext.Entry(entry).CurrentValues.SetValues(bangGia);
             _dbContext.SaveChanges();
             GetlstBangGiasFromDB();
             return "Sửa thành công";

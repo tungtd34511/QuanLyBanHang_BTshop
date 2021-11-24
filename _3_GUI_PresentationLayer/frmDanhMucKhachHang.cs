@@ -17,10 +17,13 @@ namespace _3_GUI_PresentationLayer
     public partial class frmDanhMucKhachHang : Form
     {
         //Fields 
+        private IQLKhachHangServices _iQlKhachHangServices;
         //Constructor
         public frmDanhMucKhachHang()
         {
             InitializeComponent();
+            _iQlKhachHangServices = new QLKhachHangServices();
+            LoadDS(_iQlKhachHangServices.GetlstKhachHangs());
         }
         //Method
         private void LoadDS(List<KhachHang> listKH)
@@ -39,35 +42,29 @@ namespace _3_GUI_PresentationLayer
                 int stt = 1;
                 foreach (var x in listKH)
                 {
-                    dgrid_khachHang.Rows.Add(stt,/* x.MaKhachHang, x.TenKhachHang, x.Sdt, x.Email, x.DiaChi,*/
+                    dgrid_khachHang.Rows.Add(stt,x.Id,x.Ten,x.SDT,x.Email,x.DiaChi,
                         x.TinhTrang == true ? "Hoạt động" : "Không hoạt động");
                     stt += 1;
                 }
             }
         }
-
-        private void frmDanhMucKhachHang_Load(object sender, EventArgs e)
-        {
-            //LoadDS(_iQlKhachHangServices.GetlstKhachHangs());
-        }
-
         private void dgrid_khachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
             if (rowindex > -1)
             {
-                //int listindex = _iQlKhachHangServices.GetlstKhachHangs().FindIndex(c =>
-                //    c.MaKhachHang == dgrid_khachHang.Rows[rowindex].Cells[1].Value.ToString());
-                /*frmThongTinKhachHang frmThongTinKhachHang = new frmThongTinKhachHang(/*//**_iQlKhachHangServices*/
-                //    .GetlstKhachHangs()
-                //    .FirstOrDefault(c => c.MaKhachHang == dgrid_khachHang.Rows[rowindex].Cells[1].Value.ToString()));
-                //frmThongTinKhachHang.getbtn_Luu().Click += (o, e) =>
-                //{
-                //    _iQlKhachHangServices.EditKhachHang(frmThongTinKhachHang.GetKhachHang(), /*listindex);*/
-                //    frmThongTinKhachHang.Close();
-                //    LoadDS(_iQlKhachHangServices.GetlstKhachHangs());
-                //};
-                //frmThongTinKhachHang.ShowDialog();
+                int listindex = _iQlKhachHangServices.GetlstKhachHangs().FindIndex(c =>
+                    c.Id == Convert.ToInt32(dgrid_khachHang.Rows[rowindex].Cells[1].Value.ToString()));
+                frmThongTinKhachHang frmThongTinKhachHang = new frmThongTinKhachHang(_iQlKhachHangServices
+                    .GetlstKhachHangs()
+                    .FirstOrDefault(c => c.Id == Convert.ToInt32(dgrid_khachHang.Rows[rowindex].Cells[1].Value.ToString())));
+                frmThongTinKhachHang.getbtn_Luu().Click += (o, e) =>
+                {
+                _iQlKhachHangServices.Update(frmThongTinKhachHang.GetKhachHang());
+                    frmThongTinKhachHang.Close();
+                    LoadDS(_iQlKhachHangServices.GetlstKhachHangs());
+                };
+                frmThongTinKhachHang.ShowDialog();
             }
         }
 
@@ -76,46 +73,21 @@ namespace _3_GUI_PresentationLayer
             frmThongTinKhachHang frmThongTinKhach = new frmThongTinKhachHang();
             frmThongTinKhach.getbtn_Luu().Click += (o, args) =>
             {
-                //_iQlKhachHangServices.AddKhachHang(frmThongTinKhach.GetKhachHang());
-                //frmThongTinKhach.Close();
-                //LoadDS(_iQlKhachHangServices.GetlstKhachHangs());
+                _iQlKhachHangServices.Add(frmThongTinKhach.GetKhachHang());
+                frmThongTinKhach.Close();
+                LoadDS(_iQlKhachHangServices.GetlstKhachHangs());
             };
             frmThongTinKhach.ShowDialog();
         }
 
         private void btn_timKiem_Click(object sender, EventArgs e)
         {
-            //if (txt_timKiem.Text != null || txt_timKiem.Text != "")
-            //{
-            //    LoadDS(_iQlKhachHangServices.GetlstKhachHangs().Where(c =>
-            //        c.MaKhachHang == txt_timKiem.Text ||
-            //        c.TenKhachHang.ToLower().StartsWith(txt_timKiem.Text.ToLower())).ToList());
-            //}
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_timKiem_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgrid_khachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            if (txt_timKiem.Text != null || txt_timKiem.Text != "")
+            {
+                LoadDS(_iQlKhachHangServices.GetlstKhachHangs().Where(c =>
+                    c.Id == Convert.ToInt32(txt_timKiem.Text.ToString()) ||
+                    c.Ten.ToLower().StartsWith(txt_timKiem.Text.ToLower())).ToList());
+            }
         }
     }
 }

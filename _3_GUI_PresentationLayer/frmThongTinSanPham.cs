@@ -28,18 +28,27 @@ namespace _3_GUI_PresentationLayer
             _nuocHoa = new SanPham();
             _nuocHoa.Id = int.Parse(txt_MaHang.Text);
             _nuocHoa.Ten = txt_TenHang.Text;
-            _nuocHoa.XuatXu.ThuongHieu = txt_ThuongHieu.Text;
-            _nuocHoa.XuatXu.NoiSanXuat = txt_XuatXu.Text;
-            _nuocHoa.XuatXu.NamPhatHanh = Convert.ToInt32(txt_NamPhatHanh.Text);
-            _nuocHoa.MoTaSanPham.GioiTinh = txt_Phai.Text=="Nam"?true:false;
+            _nuocHoa.XuatXu = new XuatXu()
+            {
+                ThuongHieu = txt_ThuongHieu.Text,
+                NoiSanXuat = txt_XuatXu.Text,
+                NamPhatHanh = Convert.ToInt32(txt_NamPhatHanh.Text)
+            };
+            _nuocHoa.BangGia = new BangGia()
+            {
+                GiaNhap = int.Parse(txt_DonGiaBan.Text),
+                GiaBan = int.Parse(txt_DonGiaNhap.Text)
+            };
+            _nuocHoa.MoTaSanPham = new MoTaSanPham()
+            {
+                GioiTinh = txt_Phai.Text == "Nam" ? true : false,
+                DungTich = Convert.ToInt32(txt_DungTich.Text),
+                Anh = txt_anh.Text,
+                GhiChu = txt_GhiCHu.Text,
+                PhienBan = txt_PhienBan.Text
+            };
             _nuocHoa.SoLuong = Convert.ToInt32(txt_SoLuong.Text);
-            _nuocHoa.BangGia.GiaNhap = int.Parse(txt_DonGiaBan.Text);
-            _nuocHoa.BangGia.GiaBan = int.Parse(txt_DonGiaNhap.Text);
-            _nuocHoa.MoTaSanPham.DungTich = Convert.ToInt32(txt_DungTich.Text);
             _nuocHoa.TinhTrang = rbtn_MoBan.Checked ? true : false;
-            _nuocHoa.MoTaSanPham.Anh = txt_anh.Text;
-            _nuocHoa.MoTaSanPham.GhiChu = txt_GhiCHu.Text;
-            _nuocHoa.MoTaSanPham.PhienBan = txt_PhienBan.Text;
             _nuocHoa.MaQR = txt_QR.Text;
             return _nuocHoa;
         }
@@ -58,29 +67,36 @@ namespace _3_GUI_PresentationLayer
         }
         public void LoadData(SanPham nuocHoa)
         {
-            txt_MaHang.Text = nuocHoa.Id.ToString();
-            txt_TenHang.Text = nuocHoa.Ten;
-            txt_ThuongHieu.Text = nuocHoa.XuatXu.ThuongHieu;
-            txt_XuatXu.Text = nuocHoa.XuatXu.NoiSanXuat;
-            txt_NamPhatHanh.Text = nuocHoa.XuatXu.NamPhatHanh.ToString();
-            txt_Phai.Text = nuocHoa.MoTaSanPham.GioiTinh==true?"Nam":"Nữ";
-            txt_SoLuong.Text = nuocHoa.SoLuong.ToString();
-            txt_DonGiaBan.Text = nuocHoa.BangGia.GiaBan.ToString();
-            txt_DonGiaNhap.Text = nuocHoa.BangGia.GiaNhap.ToString();
-            txt_DungTich.Text = nuocHoa.MoTaSanPham.DungTich.ToString();
-            rbtn_MoBan.Checked = nuocHoa.TinhTrang == true ? true : false;
-            rbtn_MoBan.Checked = nuocHoa.TinhTrang == false ? true : false;
-            txt_anh.Text = nuocHoa.MoTaSanPham.Anh;
-            txt_GhiCHu.Text = nuocHoa.MoTaSanPham.GhiChu;
-            txt_PhienBan.Text = nuocHoa.MoTaSanPham.PhienBan;
-            txt_QR.Text = nuocHoa.MaQR;
             try
             {
+                txt_MaHang.Text = nuocHoa.Id.ToString();
+                txt_TenHang.Text = nuocHoa.Ten;
+                txt_ThuongHieu.Text = nuocHoa.XuatXu.ThuongHieu;
+                txt_XuatXu.Text = nuocHoa.XuatXu.NoiSanXuat;
+                txt_NamPhatHanh.Text = nuocHoa.XuatXu.NamPhatHanh.ToString();
+                txt_Phai.Text = nuocHoa.MoTaSanPham.GioiTinh == true ? "Nam" : "Nữ";
+                txt_SoLuong.Text = nuocHoa.SoLuong.ToString();
+                txt_DonGiaBan.Text = nuocHoa.BangGia.GiaBan.ToString();
+                txt_DonGiaNhap.Text = nuocHoa.BangGia.GiaNhap.ToString();
+                txt_DungTich.Text = nuocHoa.MoTaSanPham.DungTich.ToString();
+                rbtn_MoBan.Checked = nuocHoa.TinhTrang == true ? true : false;
+                rbtn_MoBan.Checked = nuocHoa.TinhTrang == false ? true : false;
+                txt_anh.Text = nuocHoa.MoTaSanPham.Anh;
+                txt_GhiCHu.Text = nuocHoa.MoTaSanPham.GhiChu;
+                txt_PhienBan.Text = nuocHoa.MoTaSanPham.PhienBan;
+                txt_QR.Text = nuocHoa.MaQR;
+                try
+                {
 
-                img_SanPham.Image = Image.FromFile(txt_anh.Text);
+                    img_SanPham.Image = Image.FromFile(txt_anh.Text);
+                }
+                catch (Exception e)
+                {
+                }
             }
             catch (Exception e)
             {
+                
             }
         }
         private void btn_QuetMa_Click(object sender, EventArgs e)
