@@ -18,5 +18,6 @@ namespace _2_BUS_BusinessLayer.IServices
         void Update(Info_HoaDon infoHoaDon, int index);
         void Delete(int index);
         KhachHang GetKhachHang();
+        void AddtoDB(HoaDonChiTiet hoaDonChiTiet, List<int> lstSanPham);
     }
 }

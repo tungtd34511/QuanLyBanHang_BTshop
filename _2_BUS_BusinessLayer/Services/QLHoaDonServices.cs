@@ -32,7 +32,7 @@ namespace _2_BUS_BusinessLayer.Models
                 _lstHoaDonChiTiets.Add(new HoaDonChiTiet()
                 {
                     HoaDon = x,
-                    LstDonHangs = _iDonHangServices.GetlstDonHangs().Where(c=>c.HoaDon.Id == x.Id).ToList()
+                    LstDonHangs = _iDonHangServices.GetlstDonHangs().Where(c => c.HoaDon.Id == x.Id).ToList()
                 });
             }
             return _lstHoaDonChiTiets;

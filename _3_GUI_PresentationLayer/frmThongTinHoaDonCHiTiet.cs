@@ -16,7 +16,6 @@ namespace _3_GUI_PresentationLayer
     public partial class frmThongTinHoaDonCHiTiet : Form
     {
         //Fields
-        private IQLSanPhamServices _iQlNuocHoaServices;
         private IQLHoaDonServices _iHoaDonChiTietServices;
         private HoaDonChiTiet _hoaDonChiTiet;
         public frmThongTinHoaDonCHiTiet()
@@ -26,9 +25,6 @@ namespace _3_GUI_PresentationLayer
         public frmThongTinHoaDonCHiTiet(HoaDonChiTiet hoaDonChiTiet)
         {
             InitializeComponent();
-            _iQlNuocHoaServices = new QLSanPhamServices();
-            //_iDonHangServices = new DonHangServices();
-            //_iQlKhachHangServices = new QLKhachHangServices();
             _iHoaDonChiTietServices = new QLHoaDonServices();
             LoadDanhSachSP(hoaDonChiTiet);
             LoadThongTin(hoaDonChiTiet);
@@ -36,54 +32,38 @@ namespace _3_GUI_PresentationLayer
         //method
         private void LoadThongTin(HoaDonChiTiet hoaDonChiTiet)
         {
-            //if (hoaDonChiTiet != null)
-            //{
-            //    txt_maNhanVien.Text = hoaDonChiTiet.MaNhanVien;
-            //    txt_tenNhanVien.Text = hoaDonChiTiet.TenNhanVien;
-            //    txt_tenKhachHang.Text = hoaDonChiTiet.KhachHang.TenKhachHang;
-            //    txt_SDT.Text = hoaDonChiTiet.KhachHang.Sdt;
-            //    txt_email.Text = hoaDonChiTiet.KhachHang.Email;
-            //    txt_MaKhachHang.Text = hoaDonChiTiet.KhachHang.MaKhachHang;
-            //    txt_diaChi.Text = hoaDonChiTiet.KhachHang.DiaChi;
-            //    txt_maHoaDon.Text = hoaDonChiTiet.MaHoaDon;
-            //    if (hoaDonChiTiet.TinhTrang == true)
-            //    {
-            //        rbtn_hoatDong.Checked = true;
-            //    }
-            //    else
-            //    {
-            //        rbtn_KhongHoatDong.Checked = true;
-            //    }
-            //    txt_Giamgia.Text = hoaDonChiTiet.GiamGia.ToString();
-            //    int thanhtien = 0;
-            //    int i = dgrid_sanPham.RowCount;
-            //    for (int j = 0; j < i; j++)
-            //    {
-            //        thanhtien += Convert.ToInt32(dgrid_sanPham.Rows[j].Cells[6].Value);
-            //    }
-            //    int a = thanhtien;
-            //    txt_ThanhTien.Text = thanhtien.ToString();
-            //   txt_KhoanThu.Text = (Convert.ToInt32(txt_ThanhTien.Text) * (1 - hoaDonChiTiet.GiamGia / 100)).ToString();
-            //   txt_NgayNhap.Text = hoaDonChiTiet.Ngayban.ToString();
-            //}
+            if (hoaDonChiTiet != null)
+            {
+                txt_tenKhachHang.Text = hoaDonChiTiet.HoaDon.KhachHang.Ten;
+                txt_SDT.Text = hoaDonChiTiet.HoaDon.KhachHang.SDT;
+                txt_email.Text = hoaDonChiTiet.HoaDon.KhachHang.Email;
+                txt_MaKhachHang.Text = hoaDonChiTiet.HoaDon.KhachHang.Id.ToString();
+                txt_diaChi.Text = hoaDonChiTiet.HoaDon.KhachHang.DiaChi;
+                txt_maHoaDon.Text = hoaDonChiTiet.HoaDon.Id.ToString();
+                if (hoaDonChiTiet.HoaDon.TinhTrang == true)
+                {
+                    rbtn_hoatDong.Checked = true;
+                }
+                else
+                {
+                    rbtn_KhongHoatDong.Checked = true;
+                }
+                txt_Giamgia.Text = hoaDonChiTiet.HoaDon.GiamGia.ToString();
+                int thanhtien = 0;
+                int i = dgrid_sanPham.RowCount;
+                for (int j = 0; j < i; j++)
+                {
+                    thanhtien += Convert.ToInt32(dgrid_sanPham.Rows[j].Cells[6].Value);
+                }
+                int a = thanhtien;
+                txt_ThanhTien.Text = thanhtien.ToString();
+                txt_KhoanThu.Text = ((Convert.ToInt32(txt_ThanhTien.Text) * (100 - hoaDonChiTiet.HoaDon.GiamGia) / 100)).ToString();
+                txt_NgayNhap.Text = hoaDonChiTiet.HoaDon.NgayTao.ToString();
+            }
         }
 
         private void LoadDanhSachSP(HoaDonChiTiet hoaDonChiTiet)
         {
-            //var lstSP =
-            //    from a in _iDonHangServices.GetlstDonHangs()
-            //    join b in _iQlNuocHoaServices.getlstNuocHoas()
-            //        on a.MaSanPham equals b.MaHang
-            //    select new 
-            //    {
-            //        MaSP = a.MaSanPham,
-            //        TenSP = b.NhaSx + " "+ b.TenHang+" "+b.PhienBan+" "+b.DungTich.ToString()+" ml",
-            //        DonGia = b.DonGiaNhap,
-            //        soLuong = a.SoLuong,
-            //        giamGia = 0,
-            //        thanhTien = b.DonGiaNhap*a.SoLuong-b.DonGiaNhap*a.SoLuong*0/100
-            //    };
-            //int t = lstSP.ToList().Count;
             dgrid_sanPham.ColumnCount = 7;
             dgrid_sanPham.Columns[0].Name = "STT";
             dgrid_sanPham.Columns[1].Name = "Mã sản phâm";
@@ -94,10 +74,12 @@ namespace _3_GUI_PresentationLayer
             dgrid_sanPham.Columns[6].Name = "Thành tiền";
             dgrid_sanPham.Rows.Clear();
             int stt = 1;
-            //foreach (var x in lstSP.ToList())
-            //{
-            //    dgrid_sanPham.Rows.Add(stt, x.MaSP, x.TenSP, x.soLuong, x.DonGia, x.giamGia, x.thanhTien);
-            //}
+            int thanhtien = 0;
+            foreach (var x in hoaDonChiTiet.LstDonHangs)
+            {
+                thanhtien = x.SoLuong * x.SanPham.BangGia.GiaBan * (100 - x.SanPham.BangGia.GiamGia)/100;
+                dgrid_sanPham.Rows.Add(stt, x.Id, x.SanPham.Ten, x.SoLuong, x.SanPham.BangGia.GiaBan, x.SanPham.BangGia.GiamGia, thanhtien);
+            }
         }
 
         public Control getButtonLuu()

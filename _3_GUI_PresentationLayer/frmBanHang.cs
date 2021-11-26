@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using _1_DAL_DataAcessLayer.Entities;
 using _2_BUS_BusinessLayer.IServices;
@@ -272,21 +273,6 @@ namespace _3_GUI_PresentationLayer
             txt_TienHang.Text = thanhtien.ToString();
             txt_TienKhachCanTra.Text = txt_TienHang.Text;
         }
-        private void btn_ThanhToan_Click(object sender, EventArgs e)
-        {
-            //_iHoaDonChiTietServices.ADDHoaDonChiTiet(new HoaDonChiTiet()
-            //{
-            //    GiamGia = 0,
-            //    GiaTriDonHang = int.Parse(txt_TienHang.Text),
-            //    KhachHang = _khachHang,
-            //    LstDonHangs = new List<DonHang>(),
-            //    MaHoaDon = "HD0001",
-            //    MaNhanVien = "NV001",
-            //    Ngayban = DateTime.Today,
-            //    TenNhanVien = "Tạ DUy Tùng",
-            //    TinhTrang = true
-            //});
-        }
         private void btn_ThemHoaDon_Click(object sender, EventArgs e)
         {
            ADDBtnTitleHoaDon();
@@ -415,6 +401,39 @@ namespace _3_GUI_PresentationLayer
             _infoHoaDon.SoLuongSp = _soLuongSP;
             _infoHoaDon.Index = _indexInfo;
             return _infoHoaDon;
+        }
+        //Thanh toán
+        private void btn_ThanhToan_Click(object sender, EventArgs e)
+        {
+            _iBanHangServices.Update(GetInfoHoaDon(), _iBanHangServices.GetlstInfoHoaDon().FindIndex(c => c.Index == _indexInfo));
+            _iBanHangServices.Savefile();
+            List<DonHang> listHang = new List<DonHang>();
+            int i = 0;
+            foreach (var x in GetInfoHoaDon().LstSanPhams)
+            {
+                listHang.Add(new DonHang()
+                {
+                    HoaDon = new HoaDon(),
+                    SanPham = _iBanHangServices.GetlstSanPhams().FirstOrDefault(c=>c.Id == x),
+                    SoLuong = GetInfoHoaDon().LstSanPhams[i],
+                    TinhTrang = true
+                });
+                i += 1;
+            }
+            _iBanHangServices.AddtoDB(new HoaDonChiTiet()
+            {
+                HoaDon =  new HoaDon()
+                {
+                    Id = new int(),
+                    KhachHang = GetInfoHoaDon().KhachHang,
+                    GiamGia = Convert.ToInt32(txt_GiamGia.Text.ToString()),
+                    NgayTao = DateTime.Today,
+                    TheLoai = true,
+                    TinhTrangThanhToan = true,
+                    TinhTrang = true
+                },
+                LstDonHangs = listHang
+            },GetInfoHoaDon().LstSanPhams);
         }
     }
 }
