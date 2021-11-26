@@ -14,7 +14,7 @@ namespace _1_DAL_DataAcessLayer.Entities
         [Key]
         public int Id { get; set; }
         [ForeignKey("MaNhanVien")]
-        public int NhanVien { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
        [StringLength(25)]
        public string Acc { get; set; }
        [StringLength(25)]
