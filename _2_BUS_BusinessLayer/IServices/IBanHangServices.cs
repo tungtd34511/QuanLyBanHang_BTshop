@@ -11,10 +11,13 @@ namespace _2_BUS_BusinessLayer.IServices
     public interface IBanHangServices
     {
         List<Info_HoaDon> GetlstInfoHoaDon();
+        List<HoaDon> GetlstHoaDon(); 
+        List<DonHang> GetlstDonHang();
         List<SanPham> GetlstSanPhams();
         void Openfile();
         void Savefile();
         void Add(Info_HoaDon infoHoaDon);
+        void UpdateSP(SanPham sanPham);
         void Update(Info_HoaDon infoHoaDon, int index);
         void Delete(int index);
         KhachHang GetKhachHang();

@@ -19,7 +19,6 @@ namespace _2_BUS_BusinessLayer.Services
         private ISanPhamServices _iSanPhamServices;
         private IDonHangServices _iDonHangServices;
         private IHoaDonServices _iHoaDonServices;
-        private IKhachHangServices _iKhachHangServices;
         private List<Info_HoaDon> _lstInfoHoaDons;
         private List<SanPham> _lstSanPhams;
         private KhachHang _khachHang;
@@ -30,7 +29,6 @@ namespace _2_BUS_BusinessLayer.Services
         {
             _iDonHangServices = new DonHangServices();
             _iHoaDonServices = new HoaDonServices();
-            _iKhachHangServices = new KhachHangServices();
             _iSanPhamServices = new SanPhamServices();
             _lstInfoHoaDons = new List<Info_HoaDon>();
             _lstSanPhams = new List<SanPham>();
@@ -44,9 +42,16 @@ namespace _2_BUS_BusinessLayer.Services
         }
         public List<SanPham> GetlstSanPhams()
         {
-            return _lstSanPhams;
+            return _iSanPhamServices.GetlstSanPhams(); ;
         }
-
+        public List<HoaDon> GetlstHoaDon()
+        {
+            return _iHoaDonServices.GetlstHoaDons();
+        }
+        public List<DonHang> GetlstDonHang()
+        {
+            return _iDonHangServices.GetlstDonHangs();
+        }
         public void Openfile()
         {
                 _fs = new FileStream(_path, FileMode.Open);
@@ -75,6 +80,11 @@ namespace _2_BUS_BusinessLayer.Services
             {
                 _lstInfoHoaDons[index] = infoHoaDon;
             }
+        }
+
+        public void UpdateSP(SanPham sanPham)
+        {
+            _iSanPhamServices.UpdateSanPham(sanPham);
         }
 
         public void Delete(int index)
