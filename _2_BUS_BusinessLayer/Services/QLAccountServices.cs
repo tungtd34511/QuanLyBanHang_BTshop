@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.Services
 {
-    class QLAccountServices : IAccountServices
+    public class QLAccountServices : IAccountServices
     {
         private IAccountServices _iaccountServices;
         private List<Account> _lstAccounts;
 
         public QLAccountServices()
         {
-            _iaccountServices = new QLAccountServices();
+            _iaccountServices = new AccountServices();
             _lstAccounts = new List<Account>();
             GetlstAccountsFromDB();
         }
