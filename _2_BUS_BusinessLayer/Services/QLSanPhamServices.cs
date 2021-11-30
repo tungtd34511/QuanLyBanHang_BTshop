@@ -17,7 +17,6 @@ namespace _2_BUS_BusinessLayer.Services
         private IXuatXuServices _iXuatXuServices;
         private IBangGiaServices _iBangGiaServices;
         private IMoTaSanPhamServices _iMoTaSanPhamServices;
-        private List<SanPham> _lstSanPhams;
 
         public QLSanPhamServices()
         {
@@ -25,13 +24,10 @@ namespace _2_BUS_BusinessLayer.Services
             _iBangGiaServices = new BangGiaServices();
             _iXuatXuServices = new XuatXuServices();
             _iMoTaSanPhamServices = new MoTaSanPhamServices();
-            _lstSanPhams = new List<SanPham>();
-            GetlstSanPhams();
         }
         public List<SanPham> GetlstSanPhams()
         {
-            _lstSanPhams = _iSanPhamServices.GetlstSanPhams();
-            return _lstSanPhams;
+            return _iSanPhamServices.GetlstSanPhams();
         }
 
         public void Update(SanPham sanPham)
@@ -40,18 +36,15 @@ namespace _2_BUS_BusinessLayer.Services
             _iMoTaSanPhamServices.UpdateMoTaSanPham(sanPham.MoTaSanPham);
             _iXuatXuServices.UpdateXuatXu(sanPham.XuatXu);
             _iSanPhamServices.UpdateSanPham(sanPham);
-            GetlstSanPhams();
         }
 
         public void Add(SanPham sanPham)
         {
             _iSanPhamServices.AddSanPham(sanPham);
-            GetlstSanPhams();
         }
         public void Delete(SanPham sanPham)
         {
             _iSanPhamServices.DeleteSanPham(sanPham.Id);
-            GetlstSanPhams();
         }
     }
 }

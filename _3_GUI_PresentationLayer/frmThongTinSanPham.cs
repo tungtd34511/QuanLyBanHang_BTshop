@@ -36,8 +36,8 @@ namespace _3_GUI_PresentationLayer
             };
             _nuocHoa.BangGia = new BangGia()
             {
-                GiaNhap = int.Parse(txt_DonGiaBan.Text),
-                GiaBan = int.Parse(txt_DonGiaNhap.Text)
+                GiaNhap = int.Parse(txt_DonGiaNhap.Text),
+                GiaBan = int.Parse(txt_DonGiaBan.Text)
             };
             _nuocHoa.MoTaSanPham = new MoTaSanPham()
             {
@@ -48,7 +48,7 @@ namespace _3_GUI_PresentationLayer
                 PhienBan = txt_PhienBan.Text
             };
             _nuocHoa.SoLuong = Convert.ToInt32(txt_SoLuong.Text);
-            _nuocHoa.TinhTrang = rbtn_MoBan.Checked ? true : false;
+            _nuocHoa.TinhTrang = rbtn_MoBan.Checked==true ? true : false;
             _nuocHoa.MaQR = txt_QR.Text;
             return _nuocHoa;
         }
@@ -80,7 +80,7 @@ namespace _3_GUI_PresentationLayer
                 txt_DonGiaNhap.Text = nuocHoa.BangGia.GiaNhap.ToString();
                 txt_DungTich.Text = nuocHoa.MoTaSanPham.DungTich.ToString();
                 rbtn_MoBan.Checked = nuocHoa.TinhTrang == true ? true : false;
-                rbtn_MoBan.Checked = nuocHoa.TinhTrang == false ? true : false;
+                rbtn_KhongMoBan.Checked = nuocHoa.TinhTrang == false ? true : false;
                 txt_anh.Text = nuocHoa.MoTaSanPham.Anh;
                 txt_GhiCHu.Text = nuocHoa.MoTaSanPham.GhiChu;
                 txt_PhienBan.Text = nuocHoa.MoTaSanPham.PhienBan;

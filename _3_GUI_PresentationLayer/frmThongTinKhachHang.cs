@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1_DAL_DataAcessLayer.Entities;
@@ -15,6 +16,9 @@ namespace _3_GUI_PresentationLayer
     {
         //Fields
         private KhachHang _khachHang;
+        private Regex reTenKH = new Regex(@"\p{L}");
+        private Regex reSDT = new Regex(@"((09|03|07|08|05)+([0-9]{8})\b)");
+        private Regex reEmail = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
         public frmThongTinKhachHang()
         {
             InitializeComponent();
@@ -68,6 +72,15 @@ namespace _3_GUI_PresentationLayer
 
             _khachHang.DiaChi = txt_Diachi.Text;
             return _khachHang;
+        }
+
+        public bool validate()
+        {
+            if (reTenKH.Match(txtTenKhachHang.Text).ToString()!=""&&reEmail.Match(txt_email.Text).ToString()!=""&&reSDT.Match(txt_SDT.Text).ToString()!=""&&txt_Diachi.Text!="")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

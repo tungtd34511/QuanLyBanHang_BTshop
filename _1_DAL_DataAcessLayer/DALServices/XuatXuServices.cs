@@ -21,6 +21,7 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public List<XuatXu> GetlstXuatXus()
         {
+            GetlstXuatXusFromDB();
             return _lstXuatXus;
         }
 
@@ -33,7 +34,6 @@ namespace _1_DAL_DataAcessLayer.DALServices
         {
             _dbContext.Add(xuatXu);
             _dbContext.SaveChanges();
-            GetlstXuatXusFromDB();
             return "Thêm thành công";
         }
         public string UpdateXuatXu(XuatXu xuatXu)
@@ -41,14 +41,12 @@ namespace _1_DAL_DataAcessLayer.DALServices
             var entry = _dbContext.XUATXU.First(e => e.Id == xuatXu.Id);
             _dbContext.Entry(entry).CurrentValues.SetValues(xuatXu);
             _dbContext.SaveChanges();
-            GetlstXuatXusFromDB();
             return "Sửa thành công";
         }
         public string DeleteXuatXu(int id)
         {
             _dbContext.Remove(_lstXuatXus.FirstOrDefault(c => c.Id == id));
             _dbContext.SaveChanges();
-            GetlstXuatXusFromDB();
             return "Xóa thành công";
         }
     }
