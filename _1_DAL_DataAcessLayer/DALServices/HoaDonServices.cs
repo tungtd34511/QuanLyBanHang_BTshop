@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using _1_DAL_DataAcessLayer.DatabaseContext;
 using _1_DAL_DataAcessLayer.Entities;
 using _1_DAL_DataAcessLayer.IDALServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL_DataAcessLayer.DALServices
 {
@@ -21,6 +22,7 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public List<HoaDon> GetlstHoaDons()
         {
+            GetlstHoaDonsFromDB();
             return _lstHoaDons;
         }
 
@@ -31,6 +33,7 @@ namespace _1_DAL_DataAcessLayer.DALServices
 
         public string AddHoaDon(HoaDon hoaDon)
         {
+            hoaDon.KhachHang.Id = new int();
             _dbContext.Add(hoaDon);
             _dbContext.SaveChanges();
             GetlstHoaDonsFromDB();
