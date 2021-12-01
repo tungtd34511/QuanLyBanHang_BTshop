@@ -22,6 +22,7 @@ namespace _1_DAL_DataAcessLayer.DALServices
         }
         public List<SanPham> GetlstSanPhams()
         {
+            GetlstSanPhamsFromDB();
             return _lstSanPhams;
         }
 

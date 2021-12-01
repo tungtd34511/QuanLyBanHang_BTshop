@@ -17,6 +17,8 @@ namespace _2_BUS_BusinessLayer.Services
     {
         //Field
         private ISanPhamServices _iSanPhamServices;
+        private IDonHangServices _iDonHangServices;
+        private IHoaDonServices _iHoaDonServices;
         private List<Info_HoaDon> _lstInfoHoaDons;
         private List<SanPham> _lstSanPhams;
         private KhachHang _khachHang;
@@ -25,6 +27,8 @@ namespace _2_BUS_BusinessLayer.Services
         private string _path = @"C:\Users\Admin\OneDrive - Hanoi University of Science and Technology\Desktop\QuanLyBanHang_BTshop\_3_GUI_PresentationLayer\DataTamThoi\Hoadon.bin";
         public BanHangServices()
         {
+            _iDonHangServices = new DonHangServices();
+            _iHoaDonServices = new HoaDonServices();
             _iSanPhamServices = new SanPhamServices();
             _lstInfoHoaDons = new List<Info_HoaDon>();
             _lstSanPhams = new List<SanPham>();
@@ -38,9 +42,16 @@ namespace _2_BUS_BusinessLayer.Services
         }
         public List<SanPham> GetlstSanPhams()
         {
-            return _lstSanPhams;
+            return _iSanPhamServices.GetlstSanPhams(); ;
         }
-
+        public List<HoaDon> GetlstHoaDon()
+        {
+            return _iHoaDonServices.GetlstHoaDons();
+        }
+        public List<DonHang> GetlstDonHang()
+        {
+            return _iDonHangServices.GetlstDonHangs();
+        }
         public void Openfile()
         {
                 _fs = new FileStream(_path, FileMode.Open);
@@ -71,6 +82,11 @@ namespace _2_BUS_BusinessLayer.Services
             }
         }
 
+        public void UpdateSP(SanPham sanPham)
+        {
+            _iSanPhamServices.UpdateSanPham(sanPham);
+        }
+
         public void Delete(int index)
         {
             if (index!= null)
@@ -82,6 +98,27 @@ namespace _2_BUS_BusinessLayer.Services
         public KhachHang GetKhachHang()
         {
             return _khachHang;
+        }
+
+        public void AddtoDB(HoaDonChiTiet hoaDonChiTiet, List<int> lstSanPham)
+        {
+            hoaDonChiTiet.HoaDon.Id = new int();
+            _iHoaDonServices.AddHoaDon(hoaDonChiTiet.HoaDon);
+            HoaDon hoaDon = _iHoaDonServices.GetlstHoaDons().LastOrDefault();
+            foreach (var x in hoaDonChiTiet.LstDonHangs)
+            {
+                x.HoaDon = null;
+                x.SanPham = null;
+                _iDonHangServices.AddDonHang(x);
+            }
+            for (int j = 0; j < hoaDonChiTiet.LstDonHangs.Count; j++)
+            {
+                hoaDonChiTiet.LstDonHangs[j].HoaDon = new HoaDon();
+                hoaDonChiTiet.LstDonHangs[j].HoaDon = hoaDon;
+                hoaDonChiTiet.LstDonHangs[j].SanPham = new SanPham();
+                hoaDonChiTiet.LstDonHangs[j].SanPham = _iSanPhamServices.GetlstSanPhams().FirstOrDefault(c=>c.Id== lstSanPham[j]);
+                _iDonHangServices.UpdateDonHang(hoaDonChiTiet.LstDonHangs[j]);
+            }
         }
     }
 }

@@ -49,6 +49,7 @@ namespace _3_GUI_PresentationLayer
             _videoCaptureDevice = new VideoCaptureDevice(_filterInfoCollection[cbx_Camera.SelectedIndex].MonikerString);
             _videoCaptureDevice.NewFrame += FinalFrame_NewFrame;
             _videoCaptureDevice.Start();
+            timer1.Start();
         }
 
         private void frmQuetQR_FormClosing(object sender, FormClosingEventArgs e)
@@ -60,16 +61,25 @@ namespace _3_GUI_PresentationLayer
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            BarcodeReader Reader = new BarcodeReader();
-            Result result = Reader.Decode((Bitmap)pictureBox1.Image);
-            if (result != null)
+            try
             {
-                txt_maQR.Text = result.ToString();
+                BarcodeReader Reader = new BarcodeReader();
+                Result result = Reader.Decode((Bitmap)pictureBox1.Image);
+                if (result != null)
+                {
+                    txt_maQR.Text = result.ToString();
+                }
             }
+            catch (Exception exception)
+            {
+            }
+            
         }
         private void btn_Decode_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            //_videoCaptureDevice = new VideoCaptureDevice();
+            //_videoCaptureDevice.NewFrame += FinalFrame_NewFrame;
+            //_videoCaptureDevice.Stop();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

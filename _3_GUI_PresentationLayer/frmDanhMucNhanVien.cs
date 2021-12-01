@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1_DAL_DataAcessLayer.Entities;
 using _2_BUS_BusinessLayer;
+using _1_DAL_DataAcessLayer.IDALServices;
 
 namespace _3_GUI_PresentationLayer
 {
     public partial class frmDanhMucNhanVien : Form
     {
+        private object _iNhanVienServices;
+
         public frmDanhMucNhanVien()
         {
             InitializeComponent();
@@ -46,7 +49,7 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
-        private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e, object _iNhanVienServices)
+        private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
             int Listindex = _iNhanVienServices.GetlstNhanViens()
@@ -62,13 +65,13 @@ namespace _3_GUI_PresentationLayer
             frmThongTinNhanVien.ShowDialog();
         }
 
-        private void btn_them_Click(object sender, EventArgs e, object _iNhanVienServices)
+        private void btn_them_Click(object sender, EventArgs e)
         {
             frmThongTinNhanVien frmThongTinNhanVien =
                 new frmThongTinNhanVien();
             frmThongTinNhanVien.GetBtnLuu().Click += (o, e) =>
             {
-                _iNhanVienServices.ADDNhanVien(frmThongTinNhanVien.GetNhanVien());
+                _iNhanVienServices.ADDNhanVien(frmThongTinNhanVien.GetlstNhanVien());
                 frmThongTinNhanVien.Close();
                 LoadData(_iNhanVienServices.GetlstNhanViens());
             };
@@ -79,7 +82,7 @@ namespace _3_GUI_PresentationLayer
         {
             if (txt_timKiem.Text != null && txt_timKiem.Text != "")
             {
-               LoadData(_iNhanVienServices.GetlstNhanViens().Where(c=>c.Ten.ToLower().StartsWith(txt_timKiem.Text)&&c.Id==txt_timKiem.Text).ToList());
+                LoadData(_iNhanVienServices.GetlstNhanViens().Where(c => c.Ten.ToLower().StartsWith(txt_timKiem.Text) && c.Id == txt_timKiem.Text).ToList());
            }
         }
     }

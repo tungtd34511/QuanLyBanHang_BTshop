@@ -22,7 +22,6 @@ namespace _3_GUI_PresentationLayer
         private SanPham _sanPham;
         private Timer[] timerList = new Timer[100];
         private int timerMaxIndex = -1;
-        private ChkInfo chkInfo;
         private void NgayGio()
         {
             lb_NgayGio.Text = "Time: "+ DateTime.Now.ToString();
@@ -81,7 +80,6 @@ namespace _3_GUI_PresentationLayer
         {
             InitializeComponent();
             _iqlSanPhamServices = new QLSanPhamServices();
-            chkInfo = new ChkInfo();
             SetInterval(1000, NgayGio);
             LoadDS(_iqlSanPhamServices.GetlstSanPhams());
         }
@@ -112,7 +110,7 @@ namespace _3_GUI_PresentationLayer
                     _lstSanPhams[listindex].BangGia.Id=d;
                     _iqlSanPhamServices.Update(_lstSanPhams[listindex]);
                     frmThongTinSanPham.Close();
-                    this.LoadDS(_iqlSanPhamServices.GetlstSanPhams());
+                    LoadDS(_lstSanPhams);
                 };
                 frmThongTinSanPham.ShowDialog();
             }
@@ -139,6 +137,7 @@ namespace _3_GUI_PresentationLayer
             {
                 this._sanPham = new SanPham();
                 _sanPham = frmThongTinSanPham.getNuocHoa();
+                _sanPham.XuatXu.NgayNhap = DateTime.Now;
                 _iqlSanPhamServices.Add(_sanPham);
                 frmThongTinSanPham.Close();
                 this.LoadDS(_iqlSanPhamServices.GetlstSanPhams());
