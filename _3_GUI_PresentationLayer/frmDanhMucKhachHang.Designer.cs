@@ -59,6 +59,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.dgrid_khachHang.AllowUserToAddRows = false;
             this.dgrid_khachHang.AllowUserToDeleteRows = false;
+            this.dgrid_khachHang.BackgroundColor = System.Drawing.Color.White;
             this.dgrid_khachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_khachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid_khachHang.Location = new System.Drawing.Point(0, 125);
@@ -72,6 +73,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 570);
@@ -82,14 +84,17 @@ namespace _3_GUI_PresentationLayer
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(40, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 20);
+            this.label1.Size = new System.Drawing.Size(307, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nháy vào ô để xem và sửa thông tin chi tiết";
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel2.Controls.Add(this.btn_them);
             this.panel2.Controls.Add(this.btn_timKiem);
             this.panel2.Controls.Add(this.txt_timKiem);
@@ -101,11 +106,11 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_them
             // 
-            this.btn_them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(210)))), ((int)(((byte)(230)))));
+            this.btn_them.BackColor = System.Drawing.Color.Black;
             this.btn_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_them.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_them.ForeColor = System.Drawing.Color.White;
             this.btn_them.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btn_them.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(126)))), ((int)(((byte)(228)))));
+            this.btn_them.IconColor = System.Drawing.Color.White;
             this.btn_them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_them.IconSize = 35;
             this.btn_them.Location = new System.Drawing.Point(521, 35);
@@ -119,8 +124,9 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_timKiem
             // 
-            this.btn_timKiem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_timKiem.BackColor = System.Drawing.Color.White;
             this.btn_timKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_timKiem.ForeColor = System.Drawing.Color.Black;
             this.btn_timKiem.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btn_timKiem.IconColor = System.Drawing.Color.Black;
             this.btn_timKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -149,6 +155,7 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.panel1);
             this.Name = "frmDanhMucKhachHang";
             this.Text = "frmDanhMucKhachHang";
+            this.Load += new System.EventHandler(this.frmDanhMucKhachHang_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_khachHang)).EndInit();
             this.panel3.ResumeLayout(false);

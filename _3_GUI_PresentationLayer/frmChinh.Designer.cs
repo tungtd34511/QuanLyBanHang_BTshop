@@ -357,7 +357,7 @@ namespace _3_GUI_PresentationLayer
             // panelDesktop
             // 
             this.panelDesktop.AutoScroll = true;
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(180)))), ((int)(((byte)(231)))));
+            this.panelDesktop.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(250, 122);
             this.panelDesktop.Name = "panelDesktop";

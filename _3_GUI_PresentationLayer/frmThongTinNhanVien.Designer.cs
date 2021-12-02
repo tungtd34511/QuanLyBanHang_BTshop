@@ -64,7 +64,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(114, 29);
             this.btn_Luu.TabIndex = 72;
-            this.btn_Luu.Text = "Lưu ";
+            this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = true;
             // 
             // label13
@@ -306,6 +306,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(1060, 617);
             this.Controls.Add(this.txt_NgaySinh);
             this.Controls.Add(this.btn_Luu);
@@ -333,6 +334,7 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmThongTinNhanVien";
             this.Text = "frmThongTinNhanVien";
             ((System.ComponentModel.ISupportInitialize)(this.img_NhanVien)).EndInit();

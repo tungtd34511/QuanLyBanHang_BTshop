@@ -242,6 +242,24 @@ namespace _3_GUI_PresentationLayer
         {
             _maQR = "";
             _maQR = data;
+            if (_maQR != "")
+            {
+                int t = 0;
+                for (int j = 0; j < dgrid_thongtin.Rows.Count; j++)
+                {
+                    if (dgrid_thongtin.Rows[j].Cells[1].Value.ToString() ==
+                        _lstSanPhams.FirstOrDefault(c => c.MaQR == _maQR).Id.ToString())
+                    {
+                        dgrid_thongtin.Rows[j].Cells[4].Value =
+                            (Convert.ToInt32(dgrid_thongtin.Rows[j].Cells[4].Value) + 1).ToString();
+                        t = 1;
+                    }
+                }
+                if (t != 1)
+                {
+                    ADDGridThongtin(_maQR, 1);
+                }
+            }
         }
         #endregion
         private void frmBanHang_Load(object sender, EventArgs e)
@@ -562,24 +580,6 @@ namespace _3_GUI_PresentationLayer
             frmQuetQR frmQuetQr = new frmQuetQR();
             frmQuetQr.sendQr = new frmQuetQR.SendQR(loadQR);
             frmQuetQr.ShowDialog();
-            if (_maQR != "")
-            {
-                int t = 0;
-                for (int j = 0; j < dgrid_thongtin.Rows.Count; j++)
-                {
-                    if (dgrid_thongtin.Rows[j].Cells[1].Value.ToString() ==
-                        _lstSanPhams.FirstOrDefault(c => c.MaQR == _maQR).Id.ToString())
-                    {
-                        dgrid_thongtin.Rows[j].Cells[4].Value =
-                            (Convert.ToInt32(dgrid_thongtin.Rows[j].Cells[4].Value) + 1).ToString();
-                        t = 1;
-                    }
-                }
-                if (t != 1)
-                {
-                    ADDGridThongtin(_maQR, 1);
-                }
-            }
         }
         //Hiện chỉ mục của _lstSanPhamsShow
         private void LoadTxt_DanhMuc()

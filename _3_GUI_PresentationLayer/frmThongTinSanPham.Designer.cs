@@ -183,6 +183,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.txt_MaHang.Location = new System.Drawing.Point(141, 72);
             this.txt_MaHang.Name = "txt_MaHang";
+            this.txt_MaHang.ReadOnly = true;
             this.txt_MaHang.Size = new System.Drawing.Size(240, 27);
             this.txt_MaHang.TabIndex = 12;
             // 
@@ -414,6 +415,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(789, 668);
             this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.txt_XuatXu);

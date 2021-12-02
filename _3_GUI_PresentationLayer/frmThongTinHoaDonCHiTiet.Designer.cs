@@ -30,12 +30,6 @@ namespace _3_GUI_PresentationLayer
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_tenNhanVien = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_maNhanVien = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
@@ -67,8 +61,6 @@ namespace _3_GUI_PresentationLayer
             this.label14 = new System.Windows.Forms.Label();
             this.txt_NgayNhap = new System.Windows.Forms.TextBox();
             this.btn_luu = new FontAwesome.Sharp.IconButton();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -86,73 +78,6 @@ namespace _3_GUI_PresentationLayer
             this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin chi tiết";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Location = new System.Drawing.Point(51, 85);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(532, 96);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nhân viên";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.89734F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.10266F));
-            this.tableLayoutPanel1.Controls.Add(this.txt_tenNhanVien, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txt_maNhanVien, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 23);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(526, 70);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // txt_tenNhanVien
-            // 
-            this.txt_tenNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txt_tenNhanVien.Location = new System.Drawing.Point(155, 40);
-            this.txt_tenNhanVien.Name = "txt_tenNhanVien";
-            this.txt_tenNhanVien.ReadOnly = true;
-            this.txt_tenNhanVien.Size = new System.Drawing.Size(368, 27);
-            this.txt_tenNhanVien.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Location = new System.Drawing.Point(3, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tên nhân viên:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Location = new System.Drawing.Point(3, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã nhân viên:";
-            // 
-            // txt_maNhanVien
-            // 
-            this.txt_maNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txt_maNhanVien.Location = new System.Drawing.Point(155, 5);
-            this.txt_maNhanVien.Name = "txt_maNhanVien";
-            this.txt_maNhanVien.ReadOnly = true;
-            this.txt_maNhanVien.Size = new System.Drawing.Size(368, 27);
-            this.txt_maNhanVien.TabIndex = 4;
             // 
             // groupBox3
             // 
@@ -334,9 +259,9 @@ namespace _3_GUI_PresentationLayer
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox2.Location = new System.Drawing.Point(51, 196);
+            this.groupBox2.Location = new System.Drawing.Point(54, 86);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(532, 214);
+            this.groupBox2.Size = new System.Drawing.Size(532, 213);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hóa đơn";
@@ -366,13 +291,13 @@ namespace _3_GUI_PresentationLayer
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 188);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 187);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txt_KhoanThu
             // 
             this.txt_KhoanThu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txt_KhoanThu.Location = new System.Drawing.Point(155, 128);
+            this.txt_KhoanThu.Location = new System.Drawing.Point(155, 126);
             this.txt_KhoanThu.Name = "txt_KhoanThu";
             this.txt_KhoanThu.ReadOnly = true;
             this.txt_KhoanThu.Size = new System.Drawing.Size(368, 27);
@@ -382,7 +307,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label6.Location = new System.Drawing.Point(3, 105);
+            this.label6.Location = new System.Drawing.Point(3, 103);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(146, 20);
             this.label6.TabIndex = 6;
@@ -392,7 +317,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Location = new System.Drawing.Point(3, 64);
+            this.label3.Location = new System.Drawing.Point(3, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 20);
             this.label3.TabIndex = 3;
@@ -402,7 +327,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label5.Location = new System.Drawing.Point(3, 22);
+            this.label5.Location = new System.Drawing.Point(3, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(146, 20);
             this.label5.TabIndex = 0;
@@ -411,7 +336,7 @@ namespace _3_GUI_PresentationLayer
             // txt_maHoaDon
             // 
             this.txt_maHoaDon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txt_maHoaDon.Location = new System.Drawing.Point(155, 12);
+            this.txt_maHoaDon.Location = new System.Drawing.Point(155, 11);
             this.txt_maHoaDon.Name = "txt_maHoaDon";
             this.txt_maHoaDon.ReadOnly = true;
             this.txt_maHoaDon.Size = new System.Drawing.Size(368, 27);
@@ -420,7 +345,7 @@ namespace _3_GUI_PresentationLayer
             // txt_Giamgia
             // 
             this.txt_Giamgia.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txt_Giamgia.Location = new System.Drawing.Point(155, 95);
+            this.txt_Giamgia.Location = new System.Drawing.Point(155, 93);
             this.txt_Giamgia.Name = "txt_Giamgia";
             this.txt_Giamgia.ReadOnly = true;
             this.txt_Giamgia.Size = new System.Drawing.Size(368, 27);
@@ -430,7 +355,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label13.Location = new System.Drawing.Point(3, 136);
+            this.label13.Location = new System.Drawing.Point(3, 134);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(146, 20);
             this.label13.TabIndex = 8;
@@ -444,11 +369,11 @@ namespace _3_GUI_PresentationLayer
             this.tableLayoutPanel4.Controls.Add(this.rbtn_KhongHoatDong, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.rbtn_hoatDong, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(155, 45);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(155, 44);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(368, 36);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(368, 35);
             this.tableLayoutPanel4.TabIndex = 10;
             // 
             // rbtn_KhongHoatDong
@@ -477,7 +402,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label14.Location = new System.Drawing.Point(3, 168);
+            this.label14.Location = new System.Drawing.Point(3, 167);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(146, 20);
             this.label14.TabIndex = 11;
@@ -486,7 +411,7 @@ namespace _3_GUI_PresentationLayer
             // txt_NgayNhap
             // 
             this.txt_NgayNhap.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txt_NgayNhap.Location = new System.Drawing.Point(155, 159);
+            this.txt_NgayNhap.Location = new System.Drawing.Point(155, 157);
             this.txt_NgayNhap.Name = "txt_NgayNhap";
             this.txt_NgayNhap.ReadOnly = true;
             this.txt_NgayNhap.Size = new System.Drawing.Size(368, 27);
@@ -494,32 +419,33 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_luu
             // 
-            this.btn_luu.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btn_luu.IconColor = System.Drawing.Color.Black;
+            this.btn_luu.BackColor = System.Drawing.Color.Black;
+            this.btn_luu.ForeColor = System.Drawing.Color.White;
+            this.btn_luu.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btn_luu.IconColor = System.Drawing.Color.White;
             this.btn_luu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_luu.IconSize = 35;
             this.btn_luu.Location = new System.Drawing.Point(560, 735);
             this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(94, 29);
+            this.btn_luu.Size = new System.Drawing.Size(99, 40);
             this.btn_luu.TabIndex = 7;
             this.btn_luu.Text = "Lưu";
-            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_luu.UseVisualStyleBackColor = false;
             // 
             // frmThongTinHoaDonCHiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(1169, 787);
             this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmThongTinHoaDonCHiTiet";
             this.Text = "frmThongTinHoaDonCHiTiet";
-            this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -539,12 +465,6 @@ namespace _3_GUI_PresentationLayer
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox txt_tenNhanVien;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_maNhanVien;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox2;

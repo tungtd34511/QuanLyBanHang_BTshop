@@ -46,6 +46,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.btn_Start.BackColor = System.Drawing.Color.White;
             this.btn_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Start.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Start.Location = new System.Drawing.Point(338, 489);
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.Size = new System.Drawing.Size(94, 29);
@@ -67,7 +68,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(56, 419);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 23);
@@ -98,7 +99,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(56, 495);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 23);
@@ -114,6 +115,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.btn_Decode.BackColor = System.Drawing.Color.White;
             this.btn_Decode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Decode.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Decode.Location = new System.Drawing.Point(497, 489);
             this.btn_Decode.Name = "btn_Decode";
             this.btn_Decode.Size = new System.Drawing.Size(94, 29);
@@ -126,6 +128,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.btn_Exit.BackColor = System.Drawing.Color.White;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Exit.Location = new System.Drawing.Point(665, 489);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(94, 29);
@@ -138,7 +141,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(1093, 611);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Decode);

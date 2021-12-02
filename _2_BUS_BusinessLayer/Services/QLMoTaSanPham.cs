@@ -5,39 +5,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _1_DAL_DataAcessLayer.DALServices;
+using _1_DAL_DataAcessLayer.IDALServices;
 
 namespace _2_BUS_BusinessLayer.Services
 {
-    class BusMoTaSanPham : IBusMoTaSanPham
+    public class QLMoTaSanPham : IQLMoTaSanPham
     {
-        private IBusMoTaSanPham _IbusMoTaSanPham;
+        private IMoTaSanPhamServices _iMoTaSanPhamServices;
         private List<MoTaSanPham> _lstMoTaSanPhams;
-        public BusMoTaSanPham()
+        public QLMoTaSanPham()
         {
-            _IbusMoTaSanPham = new BusMoTaSanPham();
+            _iMoTaSanPhamServices = new MoTaSanPhamServices();
             _lstMoTaSanPhams = new List<MoTaSanPham>();
+            _lstMoTaSanPhams = _iMoTaSanPhamServices.GetlstMoTaSanPhams();
             GetlstMoTaSanPham();
         }
 
         public List<MoTaSanPham> GetlstMoTaSanPham()
         {
+            _iMoTaSanPhamServices.GetlstMoTaSanPhamsFromDB();
             return _lstMoTaSanPhams;
         }
         public void AddMoTaSanPham(MoTaSanPham moTaSanPham)
         {
-            _IbusMoTaSanPham.AddMoTaSanPham(moTaSanPham);
+            _iMoTaSanPhamServices.AddMoTaSanPham(moTaSanPham);
         }
 
         public void DeleteMoTaSanPham(int index)
         {
-            _IbusMoTaSanPham.DeleteMoTaSanPham(index);
+            _iMoTaSanPhamServices.DeleteMoTaSanPham(index);
         }
-
-        
-
-        public void UpdateBMoTaSanPham(MoTaSanPham moTaSanPham)
+        public void UpdateMoTaSanPham(MoTaSanPham moTaSanPham)
         {
-            _IbusMoTaSanPham.UpdateBMoTaSanPham(moTaSanPham);
+            _iMoTaSanPhamServices.UpdateMoTaSanPham(moTaSanPham);
         }
     }
 }

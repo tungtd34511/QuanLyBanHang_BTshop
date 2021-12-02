@@ -29,9 +29,9 @@ namespace _3_GUI_PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new FontAwesome.Sharp.IconButton();
-            this.txt_Acc = new System.Windows.Forms.TextBox();
-            this.txt_Pass = new System.Windows.Forms.TextBox();
+            this.btn_Luu = new FontAwesome.Sharp.IconButton();
+            this.txt_SDT = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
             this.rbtn_KhongHoatDong = new System.Windows.Forms.RadioButton();
             this.rbtn_HoatDong = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,49 +39,49 @@ namespace _3_GUI_PresentationLayer
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgridAccount = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgridAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnSave
+            // btn_Luu
             // 
-            this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSave.IconColor = System.Drawing.Color.IndianRed;
-            this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSave.IconSize = 25;
-            this.btnSave.Location = new System.Drawing.Point(788, 152);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 70);
-            this.btnSave.TabIndex = 29;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btn_Luu.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btn_Luu.IconColor = System.Drawing.Color.IndianRed;
+            this.btn_Luu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Luu.IconSize = 25;
+            this.btn_Luu.Location = new System.Drawing.Point(788, 152);
+            this.btn_Luu.Name = "btn_Luu";
+            this.btn_Luu.Size = new System.Drawing.Size(94, 70);
+            this.btn_Luu.TabIndex = 29;
+            this.btn_Luu.Text = "Lưu";
+            this.btn_Luu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Luu.UseVisualStyleBackColor = true;
             // 
-            // txt_Acc
+            // txt_SDT
             // 
-            this.txt_Acc.Location = new System.Drawing.Point(228, 152);
-            this.txt_Acc.Name = "txt_Acc";
-            this.txt_Acc.Size = new System.Drawing.Size(186, 27);
-            this.txt_Acc.TabIndex = 26;
+            this.txt_SDT.Location = new System.Drawing.Point(228, 124);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.Size = new System.Drawing.Size(186, 27);
+            this.txt_SDT.TabIndex = 26;
             // 
-            // txt_Pass
+            // txt_email
             // 
-            this.txt_Pass.Location = new System.Drawing.Point(228, 202);
-            this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Size = new System.Drawing.Size(186, 27);
-            this.txt_Pass.TabIndex = 25;
+            this.txt_email.Location = new System.Drawing.Point(228, 174);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(186, 27);
+            this.txt_email.TabIndex = 25;
             // 
             // rbtn_KhongHoatDong
             // 
             this.rbtn_KhongHoatDong.AutoSize = true;
-            this.rbtn_KhongHoatDong.Location = new System.Drawing.Point(386, 246);
+            this.rbtn_KhongHoatDong.Location = new System.Drawing.Point(386, 279);
             this.rbtn_KhongHoatDong.Name = "rbtn_KhongHoatDong";
             this.rbtn_KhongHoatDong.Size = new System.Drawing.Size(146, 24);
             this.rbtn_KhongHoatDong.TabIndex = 24;
@@ -92,7 +92,7 @@ namespace _3_GUI_PresentationLayer
             // rbtn_HoatDong
             // 
             this.rbtn_HoatDong.AutoSize = true;
-            this.rbtn_HoatDong.Location = new System.Drawing.Point(228, 248);
+            this.rbtn_HoatDong.Location = new System.Drawing.Point(228, 281);
             this.rbtn_HoatDong.Name = "rbtn_HoatDong";
             this.rbtn_HoatDong.Size = new System.Drawing.Size(102, 24);
             this.rbtn_HoatDong.TabIndex = 23;
@@ -103,7 +103,7 @@ namespace _3_GUI_PresentationLayer
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(55, 248);
+            this.label6.Location = new System.Drawing.Point(55, 281);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 20;
@@ -112,7 +112,7 @@ namespace _3_GUI_PresentationLayer
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(55, 205);
+            this.label5.Location = new System.Drawing.Point(55, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 19;
@@ -121,7 +121,7 @@ namespace _3_GUI_PresentationLayer
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 155);
+            this.label4.Location = new System.Drawing.Point(55, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 20);
             this.label4.TabIndex = 18;
@@ -145,37 +145,53 @@ namespace _3_GUI_PresentationLayer
             this.label1.TabIndex = 15;
             this.label1.Text = "Thông tin tài khoản";
             // 
-            // btnUpdate
+            // label2
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(593, 174);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(108, 29);
-            this.btnUpdate.TabIndex = 31;
-            this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(55, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 20);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Loại tài khoản";
             // 
-            // btnDelete
+            // comboBox1
             // 
-            this.btnDelete.Location = new System.Drawing.Point(593, 223);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(108, 29);
-            this.btnDelete.TabIndex = 32;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(228, 225);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(186, 28);
+            this.comboBox1.TabIndex = 30;
             // 
-            // btnAdd
+            // button1
             // 
-            this.btnAdd.Location = new System.Drawing.Point(593, 124);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(108, 29);
-            this.btnAdd.TabIndex = 33;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.button1.Location = new System.Drawing.Point(593, 174);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 29);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Sửa";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(593, 223);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 29);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Xóa";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(593, 124);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 29);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Thêm";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgridAccount);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(55, 340);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(864, 214);
@@ -183,32 +199,16 @@ namespace _3_GUI_PresentationLayer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // dgridAccount
+            // dataGridView1
             // 
-            this.dgridAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgridAccount.Location = new System.Drawing.Point(7, 27);
-            this.dgridAccount.Name = "dgridAccount";
-            this.dgridAccount.RowHeadersWidth = 51;
-            this.dgridAccount.RowTemplate.Height = 29;
-            this.dgridAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgridAccount.Size = new System.Drawing.Size(851, 188);
-            this.dgridAccount.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 20);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "ID";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(228, 109);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(186, 27);
-            this.txtID.TabIndex = 26;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(851, 188);
+            this.dataGridView1.TabIndex = 0;
             // 
             // frmTaiKhoan
             // 
@@ -216,13 +216,13 @@ namespace _3_GUI_PresentationLayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 613);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.txt_Acc);
-            this.Controls.Add(this.txt_Pass);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btn_Luu);
+            this.Controls.Add(this.txt_SDT);
+            this.Controls.Add(this.txt_email);
             this.Controls.Add(this.rbtn_KhongHoatDong);
             this.Controls.Add(this.rbtn_HoatDong);
             this.Controls.Add(this.label6);
@@ -234,7 +234,7 @@ namespace _3_GUI_PresentationLayer
             this.Name = "frmTaiKhoan";
             this.Text = "frmTaiKhoan";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgridAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,9 +242,9 @@ namespace _3_GUI_PresentationLayer
 
         #endregion
 
-        private FontAwesome.Sharp.IconButton btnSave;
-        private System.Windows.Forms.TextBox txt_Acc;
-        private System.Windows.Forms.TextBox txt_Pass;
+        private FontAwesome.Sharp.IconButton btn_Luu;
+        private System.Windows.Forms.TextBox txt_SDT;
+        private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.RadioButton rbtn_KhongHoatDong;
         private System.Windows.Forms.RadioButton rbtn_HoatDong;
         private System.Windows.Forms.Label label6;
@@ -252,12 +252,12 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgridAccount;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

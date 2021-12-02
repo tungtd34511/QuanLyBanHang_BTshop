@@ -45,6 +45,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel1.Controls.Add(this.btn_them);
             this.panel1.Controls.Add(this.btn_timKiem);
             this.panel1.Controls.Add(this.txt_timKiem);
@@ -98,6 +99,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 604);
@@ -108,9 +110,11 @@ namespace _3_GUI_PresentationLayer
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(48, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 20);
+            this.label1.Size = new System.Drawing.Size(307, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nháy vào ô để xem và sửa thông tin chi tiết";
             // 
@@ -125,6 +129,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // dgrid_NhanVien
             // 
+            this.dgrid_NhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dgrid_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_NhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid_NhanVien.Location = new System.Drawing.Point(0, 0);

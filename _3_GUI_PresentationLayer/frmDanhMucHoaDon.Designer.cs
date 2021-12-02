@@ -42,28 +42,32 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 520);
+            this.panel3.Location = new System.Drawing.Point(0, 567);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1052, 55);
+            this.panel3.Size = new System.Drawing.Size(1215, 55);
             this.panel3.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(40, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 20);
+            this.label1.Size = new System.Drawing.Size(352, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nháy vào ô để xem và sửa thông tin chi tiết";
             // 
             // btn_timKiem
             // 
-            this.btn_timKiem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_timKiem.BackColor = System.Drawing.Color.Black;
             this.btn_timKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_timKiem.ForeColor = System.Drawing.Color.White;
             this.btn_timKiem.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btn_timKiem.IconColor = System.Drawing.Color.Black;
+            this.btn_timKiem.IconColor = System.Drawing.Color.White;
             this.btn_timKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_timKiem.IconSize = 30;
             this.btn_timKiem.Location = new System.Drawing.Point(346, 33);
@@ -84,12 +88,13 @@ namespace _3_GUI_PresentationLayer
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel2.Controls.Add(this.btn_timKiem);
             this.panel2.Controls.Add(this.txt_timKiem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1052, 125);
+            this.panel2.Size = new System.Drawing.Size(1215, 125);
             this.panel2.TabIndex = 2;
             // 
             // dgrid_Hoadon
@@ -97,6 +102,7 @@ namespace _3_GUI_PresentationLayer
             this.dgrid_Hoadon.AllowUserToAddRows = false;
             this.dgrid_Hoadon.AllowUserToDeleteRows = false;
             this.dgrid_Hoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgrid_Hoadon.BackgroundColor = System.Drawing.Color.White;
             this.dgrid_Hoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_Hoadon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid_Hoadon.Location = new System.Drawing.Point(0, 125);
@@ -104,7 +110,7 @@ namespace _3_GUI_PresentationLayer
             this.dgrid_Hoadon.ReadOnly = true;
             this.dgrid_Hoadon.RowHeadersWidth = 51;
             this.dgrid_Hoadon.RowTemplate.Height = 29;
-            this.dgrid_Hoadon.Size = new System.Drawing.Size(1052, 395);
+            this.dgrid_Hoadon.Size = new System.Drawing.Size(1215, 442);
             this.dgrid_Hoadon.TabIndex = 4;
             this.dgrid_Hoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_Hoadon_CellClick);
             // 
@@ -112,7 +118,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 575);
+            this.ClientSize = new System.Drawing.Size(1215, 622);
             this.Controls.Add(this.dgrid_Hoadon);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

@@ -8,15 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1_DAL_DataAcessLayer.Entities;
-using _2_BUS_BusinessLayer;
-using _1_DAL_DataAcessLayer.IDALServices;
 
 namespace _3_GUI_PresentationLayer
 {
     public partial class frmDanhMucNhanVien : Form
     {
-        private object _iNhanVienServices;
-
         public frmDanhMucNhanVien()
         {
             InitializeComponent();
@@ -41,28 +37,28 @@ namespace _3_GUI_PresentationLayer
             if (listNhanVien.Count>0)
             {
                 int stt = 1;
-                foreach (var x in listNhanVien)
-                {
-                    dgrid_NhanVien.Rows.Add(stt, x.Id, x.Ten, x.Sdt, x.Email, x.NgaySinh, x.GioiTinh == true ? "Nam" : "Nữ", x.ChucVu == true  ? "Nhân viên" : "Quản lý", _iAnhServices.GetlstAnhs().FirstOrDefault(c => c.Id == x.MaAnh).Path, x.DiaChi, x.GhiChu, x.TinhTrang == true ? "Hoạt động" : "Không Hoạt động");
-                    stt += 1;
-                }
+                //foreach (var x in listNhanVien)
+                //{
+                //    dgrid_NhanVien.Rows.Add(stt,x.Id,x.Ten,x.Sdt,x.Email,x.NgaySinh,x.GioiTinh==true?"Nam":"Nữ",x.ChucVu==true?"Quản lý":"Nhân viên",_iAnhServices.GetlstAnhs().FirstOrDefault(c=>c.Id==x.MaAnh).Path,x.DiaChi,x.GhiChu,x.TinhTrang==true?"Hoạt động":"Không Hoạt động");
+                //    stt += 1;
+                //}
             }
         }
 
         private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
-            int Listindex = _iNhanVienServices.GetlstNhanViens()
-                .FindIndex(c => c.Id == dgrid_NhanVien.Rows[rowindex].Cells[1].Value);
-            frmThongTinNhanVien frmThongTinNhanVien =
-                new frmThongTinNhanVien(_iNhanVienServices.GetlstNhanViens()[Listindex]);
-            frmThongTinNhanVien.GetBtnLuu().Click += (o, e) =>
-            {
-                _iNhanVienServices.EditNhanVien(frmThongTinNhanVien.GetNhanVien(), Listindex);
-                frmThongTinNhanVien.Close();
-                LoadData(_iNhanVienServices.GetlstNhanViens());
-            };
-            frmThongTinNhanVien.ShowDialog();
+            //int Listindex = _iNhanVienServices.GetlstNhanViens()
+            //    .FindIndex(c => c.Id == dgrid_NhanVien.Rows[rowindex].Cells[1].Value);
+            //frmThongTinNhanVien frmThongTinNhanVien =
+            //    new frmThongTinNhanVien(_iNhanVienServices.GetlstNhanViens()[Listindex]);
+            //frmThongTinNhanVien.GetBtnLuu().Click += (o, e) =>
+            //{
+            //    _iNhanVienServices.EditNhanVien(frmThongTinNhanVien.GetNhanVien(), Listindex);
+            //    frmThongTinNhanVien.Close();
+            //    LoadData(_iNhanVienServices.GetlstNhanViens());
+            //};
+            //frmThongTinNhanVien.ShowDialog();
         }
 
         private void btn_them_Click(object sender, EventArgs e)
@@ -71,19 +67,19 @@ namespace _3_GUI_PresentationLayer
                 new frmThongTinNhanVien();
             frmThongTinNhanVien.GetBtnLuu().Click += (o, e) =>
             {
-                _iNhanVienServices.ADDNhanVien(frmThongTinNhanVien.GetlstNhanVien());
-                frmThongTinNhanVien.Close();
-                LoadData(_iNhanVienServices.GetlstNhanViens());
+                //_iNhanVienServices.ADDNhanVien(frmThongTinNhanVien.GetNhanVien());
+                //frmThongTinNhanVien.Close();
+                //LoadData(_iNhanVienServices.GetlstNhanViens());
             };
             frmThongTinNhanVien.ShowDialog();
         }
 
         private void btn_timKiem_Click(object sender, EventArgs e)
         {
-            if (txt_timKiem.Text != null && txt_timKiem.Text != "")
-            {
-                LoadData(_iNhanVienServices.GetlstNhanViens().Where(c => c.Ten.ToLower().StartsWith(txt_timKiem.Text) && c.Id == txt_timKiem.Text).ToList());
-           }
+            //if (txt_timKiem.Text != null && txt_timKiem.Text != "")
+            //{
+            //    LoadData(_iNhanVienServices.GetlstNhanViens().Where(c=>c.Ten.ToLower().StartsWith(txt_timKiem.Text)&&c.Id==txt_timKiem.Text).ToList());
+            //}
         }
     }
 }

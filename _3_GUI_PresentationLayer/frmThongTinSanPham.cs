@@ -122,5 +122,17 @@ namespace _3_GUI_PresentationLayer
             openFileDialog1.ShowDialog();
         }
         private OpenFileDialog openFileDialog1;
+
+        public bool validate()
+        {
+            if (txt_TenHang.Text != "" && txt_DonGiaBan.Text != "" && txt_DonGiaNhap.Text != "" &&
+                txt_DungTich.Text != "" && txt_GhiCHu.Text != "" && txt_NamPhatHanh.Text != "" && txt_Phai.Text != "" &&
+                txt_PhienBan.Text != "" && txt_QR.Text != "" && txt_SoLuong.Text != "")
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

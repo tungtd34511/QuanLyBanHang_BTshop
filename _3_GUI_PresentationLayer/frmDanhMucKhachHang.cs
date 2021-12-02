@@ -89,5 +89,10 @@ namespace _3_GUI_PresentationLayer
                     c.Ten.ToLower().StartsWith(txt_timKiem.Text.ToLower())).ToList());
             }
         }
+
+        private void frmDanhMucKhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

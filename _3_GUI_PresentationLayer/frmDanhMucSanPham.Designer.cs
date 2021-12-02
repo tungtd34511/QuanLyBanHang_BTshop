@@ -62,7 +62,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.splitContainer1.Panel1.AllowDrop = true;
             this.splitContainer1.Panel1.AutoScroll = true;
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(180)))), ((int)(((byte)(231)))));
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.splitContainer1.Panel1.Controls.Add(this.txt_TimKiem);
             this.splitContainer1.Panel1.Controls.Add(this.btn_TimKiem);
             this.splitContainer1.Panel1.Controls.Add(this.btn_Them);
@@ -72,6 +72,7 @@ namespace _3_GUI_PresentationLayer
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.splitContainer1.Panel2.Controls.Add(this.lb_NgayGio);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Size = new System.Drawing.Size(1307, 624);
@@ -87,28 +88,33 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_TimKiem
             // 
+            this.btn_TimKiem.BackColor = System.Drawing.Color.Black;
+            this.btn_TimKiem.ForeColor = System.Drawing.Color.White;
             this.btn_TimKiem.Location = new System.Drawing.Point(464, 49);
             this.btn_TimKiem.Name = "btn_TimKiem";
             this.btn_TimKiem.Size = new System.Drawing.Size(94, 29);
             this.btn_TimKiem.TabIndex = 2;
             this.btn_TimKiem.Text = "Tìm Kiếm";
-            this.btn_TimKiem.UseVisualStyleBackColor = true;
+            this.btn_TimKiem.UseVisualStyleBackColor = false;
             this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
             // btn_Them
             // 
+            this.btn_Them.BackColor = System.Drawing.Color.Black;
+            this.btn_Them.ForeColor = System.Drawing.Color.White;
             this.btn_Them.Location = new System.Drawing.Point(34, 110);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(94, 29);
             this.btn_Them.TabIndex = 1;
             this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.UseVisualStyleBackColor = false;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // dgrid_DSsanPham
             // 
             this.dgrid_DSsanPham.AllowUserToAddRows = false;
             this.dgrid_DSsanPham.AllowUserToDeleteRows = false;
+            this.dgrid_DSsanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgrid_DSsanPham.BackgroundColor = System.Drawing.Color.White;
             this.dgrid_DSsanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_DSsanPham.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -134,9 +140,11 @@ namespace _3_GUI_PresentationLayer
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(34, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(447, 20);
+            this.label1.Size = new System.Drawing.Size(468, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nháy đúp để xem thông tin chi tiết của sản phẩm, và sửa thông tin";
             // 

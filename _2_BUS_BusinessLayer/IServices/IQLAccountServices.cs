@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.IServices
 {
-    public interface IQLAccountServices
+    interface IQLAccountServices
     {
         List<Account> GetlstAccounts();
         void AddAccount(Account account);

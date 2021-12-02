@@ -96,6 +96,8 @@ namespace _3_GUI_PresentationLayer
                 frmThongTinSanPham frmThongTinSanPham = new frmThongTinSanPham(_lstSanPhams[listindex]);
                 frmThongTinSanPham.GetControl().Click += (s, e) =>
                 {
+                    if (Validate())
+                    {
                     this._sanPham = new SanPham();
                     _sanPham = frmThongTinSanPham.getNuocHoa();
                     int a, b, c, d;
@@ -111,6 +113,11 @@ namespace _3_GUI_PresentationLayer
                     _iqlSanPhamServices.Update(_lstSanPhams[listindex]);
                     frmThongTinSanPham.Close();
                     LoadDS(_lstSanPhams);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng nhập đầy dủ thông tin sản phẩm");
+                    }
                 };
                 frmThongTinSanPham.ShowDialog();
             }

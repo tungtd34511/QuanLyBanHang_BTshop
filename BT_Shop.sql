@@ -36,4 +36,6 @@ values  (N'Tạ Duy Tùng','0976909518','tungtdph16451@fpt.edu.vn',N'Hà nội',
 		(N'Tạ Duy Tùng2','0976909518','tungtdph16451@fpt.edu.vn',N'Hà nội',1),
 		(N'Hoàng Minh Đức','0976909518','tungtdph16451@fpt.edu.vn',N'Hà nội',1)
 go
-
+select * from KHACHHANG
+Delete  from SANPHAM
+Where Id = 13

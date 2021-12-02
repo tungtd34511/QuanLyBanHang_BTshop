@@ -163,13 +163,13 @@ namespace _3_GUI_PresentationLayer
             // 
             // group
             // 
-            this.group.BackColor = System.Drawing.Color.Black;
+            this.group.BackColor = System.Drawing.Color.White;
             this.group.Controls.Add(this.panel1);
             this.group.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.group.Dock = System.Windows.Forms.DockStyle.Fill;
             this.group.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.group.ForeColor = System.Drawing.Color.White;
+            this.group.ForeColor = System.Drawing.Color.Black;
             this.group.Location = new System.Drawing.Point(0, 0);
             this.group.Name = "group";
             this.group.Padding = new System.Windows.Forms.Padding(3, 15, 3, 3);
@@ -249,7 +249,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.txt_Tienthua.AutoSize = true;
             this.txt_Tienthua.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txt_Tienthua.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Tienthua.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.txt_Tienthua.Location = new System.Drawing.Point(215, 424);
             this.txt_Tienthua.Name = "txt_Tienthua";
             this.txt_Tienthua.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -318,7 +318,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.txt_TienHang.AutoSize = true;
             this.txt_TienHang.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txt_TienHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_TienHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.txt_TienHang.Location = new System.Drawing.Point(215, 162);
             this.txt_TienHang.Name = "txt_TienHang";
             this.txt_TienHang.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -330,7 +330,7 @@ namespace _3_GUI_PresentationLayer
             // txt_TienKhachCanTra
             // 
             this.txt_TienKhachCanTra.AutoSize = true;
-            this.txt_TienKhachCanTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_TienKhachCanTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.txt_TienKhachCanTra.Location = new System.Drawing.Point(215, 278);
             this.txt_TienKhachCanTra.Name = "txt_TienKhachCanTra";
             this.txt_TienKhachCanTra.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -354,8 +354,10 @@ namespace _3_GUI_PresentationLayer
             // 
             // txt_GiamGia
             // 
+            this.txt_GiamGia.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_GiamGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_GiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_GiamGia.ForeColor = System.Drawing.Color.White;
             this.txt_GiamGia.Location = new System.Drawing.Point(214, 220);
             this.txt_GiamGia.Name = "txt_GiamGia";
             this.txt_GiamGia.ReadOnly = true;
@@ -468,7 +470,7 @@ namespace _3_GUI_PresentationLayer
             this.groupBox1.Size = new System.Drawing.Size(1026, 413);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "GIỎ HÀNG";
+            this.groupBox1.Text = "ĐƠN HÀNG";
             // 
             // panel5
             // 

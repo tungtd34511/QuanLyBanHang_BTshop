@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.IServices
 {
-    interface IBusMoTaSanPham
+    public interface IQLMoTaSanPham
     {
         List<MoTaSanPham> GetlstMoTaSanPham();
         void AddMoTaSanPham(MoTaSanPham moTaSanPham);
-        void UpdateBMoTaSanPham(MoTaSanPham moTaSanPham);
+        void UpdateMoTaSanPham(MoTaSanPham moTaSanPham);
         void DeleteMoTaSanPham(int index);
     }
 }
